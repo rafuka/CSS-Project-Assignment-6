@@ -1,1 +1,1 @@
-# CSS Project Assignment 6 (Modern Developer CSS Course)
+# Introduction to CSS Project Assignment 6
