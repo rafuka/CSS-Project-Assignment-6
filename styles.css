@@ -325,6 +325,8 @@ button.remove:active {
 	top: 5px;
 }
 
+
+
 #total-price {
 	text-align: right;
 	font-family: 'Prompt', sans-serif;
@@ -335,6 +337,7 @@ button.remove:active {
 #total-price h2 {
 	display: inline-block;
 	color: #12adbf;
+	font-size: 24px;
 	margin-right: 20px;
 }
 
@@ -344,6 +347,17 @@ button.remove:active {
 	font-size: 24px;
 }
 
+#coupon-label {
+	color: #12adbf;
+	font-size: 24px;
+}
+
+#coupon {
+	margin-right: 20px;
+	outline: none;
+	padding: 5px;
+	font-size: 18px;
+}
 
 .clearfix {
 	clear: both;
@@ -353,6 +367,7 @@ button.remove:active {
 .button-wrap {
 	overflow: hidden;
 }
+
 /* Taken from CSS-Tricks (https://css-tricks.com/snippets/css/turn-off-number-input-spinners/)
    to remove number spinners */
 input[type=number]::-webkit-inner-spin-button, 
