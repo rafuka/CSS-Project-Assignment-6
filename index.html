@@ -13,7 +13,7 @@
 	<header>
 		<h1>Our Products</h1>
 		<nav>
-			<a href="cart.html"><button id="cart"><span id="cart-num">0</span><i id="cart-icon" class="fa fa-opencart"></i></button></a>
+			<button id="cart-btn"><span id="cart-num">0</span><i id="cart-icon" class="fa fa-opencart"></i></button>
 		</nav>
 	</header>
 	<main>
@@ -80,6 +80,160 @@
 			</article>
 		</div>
 	</main>
+	<div id="cart">
+		<header>
+			<h1>Your Cart</h1>
+			<nav>
+				<a id="close-cart"><i class="fa fa-arrow-left" aria-hidden="true"></i> Keep Shopping</a>
+			</nav>
+		</header>
+		<div id="cart-container">
+			<article class="cart-product">
+				<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
+				<div class="description">
+					<h2 class="product-title">Buggawatts</h2>
+					<p class="product-description">Order our Buggawatts packets and never miss those interesting scents of the city. Just a little amount on each nosetril and you're set to smell the world as you've never had before. Specially fun when travelling to new places!</p>
+				</div>
+				<div class="price">
+					<h2>Price</h2>
+					<p>$$$</p>
+				</div>
+				<div class="quantity">
+					<h2>Quantity</h2>
+					<button>-</button>
+					<input class="qnum" type="number" name="product-quantity" value="1">
+					<button>+</button>
+				</div>
+				<div class="button-wrap">
+					<button class="remove">Remove from Cart</button>
+				</div>
+			</article>
+			<article class="cart-product">
+				<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
+				<div class="description">
+					<h2 class="product-title">Jawaka</h2>
+					<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. </p>
+				</div>
+				<div class="price">
+					<h2>Price</h2>
+					<p>$$$</p>
+				</div>
+				<div class="quantity">
+					<h2>Quantity</h2>
+					<button>-</button>
+					<input class="qnum" type="number" name="product-quantity" value="1">
+					<button>+</button>
+				</div>
+				<div class="button-wrap">
+					<button class="remove">Remove from Cart</button>
+				</div>
+			</article>
+			<article class="cart-product">
+				<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
+				<div class="description">
+					<h2 class="product-title">Schwein</h2>
+					<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. </p>
+				</div>
+				<div class="price">
+					<h2>Price</h2>
+					<p>$$$</p>
+				</div>
+				<div class="quantity">
+					<h2>Quantity</h2>
+					<button>-</button>
+					<input class="qnum" type="number" name="product-quantity" value="1">
+					<button>+</button>
+				</div>
+				<div class="button-wrap">
+					<button class="remove">Remove from Cart</button>
+				</div>
+			</article>
+			<div id="total-price">
+				<label id="coupon-label" for="coupon">Coupon Code</label>
+				<input type="text" name="coupon" id="coupon">
+				<h2>Total Price</h2>
+				<p>$$$$</p>
+			</div>
+		</div>
+		<a id="check-out" href="#">Check Out! <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+	</div>
+	<article id="cart">
+		<header>
+			<h1>Your Cart</h1>
+			<nav>
+				<a id="close-cart"><i class="fa fa-arrow-left" aria-hidden="true"></i> Keep Shopping</a>
+			</nav>
+		</header>
+		<div id="cart-grid">
+			<article class="cart-product">
+				<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
+				<div class="description">
+					<h2 class="product-title">Buggawatts</h2>
+					<p class="product-description">Order our Buggawatts packets and never miss those interesting scents of the city. Just a little amount on each nosetril and you're set to smell the world as you've never had before. Specially fun when travelling to new places!</p>
+				</div>
+				<div class="price">
+					<h2>Price</h2>
+					<p>$$$</p>
+				</div>
+				<div class="quantity">
+					<h2>Quantity</h2>
+					<button>-</button>
+					<input class="qnum" type="number" name="product-quantity" value="1">
+					<button>+</button>
+				</div>
+				<div class="button-wrap">
+					<button class="remove">Remove from Cart</button>
+				</div>
+			</article>
+			<article class="cart-product">
+				<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
+				<div class="description">
+					<h2 class="product-title">Jawaka</h2>
+					<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. </p>
+				</div>
+				<div class="price">
+					<h2>Price</h2>
+					<p>$$$</p>
+				</div>
+				<div class="quantity">
+					<h2>Quantity</h2>
+					<button>-</button>
+					<input class="qnum" type="number" name="product-quantity" value="1">
+					<button>+</button>
+				</div>
+				<div class="button-wrap">
+					<button class="remove">Remove from Cart</button>
+				</div>
+			</article>
+			<article class="cart-product">
+				<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
+				<div class="description">
+					<h2 class="product-title">Schwein</h2>
+					<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. </p>
+				</div>
+				<div class="price">
+					<h2>Price</h2>
+					<p>$$$</p>
+				</div>
+				<div class="quantity">
+					<h2>Quantity</h2>
+					<button>-</button>
+					<input class="qnum" type="number" name="product-quantity" value="1">
+					<button>+</button>
+				</div>
+				<div class="button-wrap">
+					<button class="remove">Remove from Cart</button>
+				</div>
+			</article>
+			<div id="total-price">
+				<label id="coupon-label" for="coupon">Coupon Code</label>
+				<input type="text" name="coupon" id="coupon">
+				<h2>Total Price</h2>
+				<p>$$$$</p>
+			</div>
+		</div>
+		<a id="check-out" href="#">Check Out! <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+	</article>
 	<script type="text/javascript" src="shop.js"></script>
 </body>
 </html>
