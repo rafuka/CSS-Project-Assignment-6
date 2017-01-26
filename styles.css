@@ -39,7 +39,7 @@ main {
     margin-bottom: 30px;
 }
 
-#cart-btn {
+#open-cart-btn {
 	position: fixed;
 	width: 60px;
 	height: 60px;
@@ -58,7 +58,7 @@ main {
 
 }
 
-#cart-btn:hover {
+#open-cart-btn:hover {
 	cursor: pointer;
 	box-shadow: 0px 0px 30px rgba(50,50,50,0.2);
 	background-color: white;
@@ -169,7 +169,7 @@ article.product button:active {
 	margin-right: 15px;
 }
 
-#close-cart {
+#close-cart-btn {
 	cursor: pointer;
 	text-decoration: none;
 	font-family: 'Montserrat', sans-serif;
@@ -180,11 +180,11 @@ article.product button:active {
     margin-right: 10%;
 }
 
-#close-cart:hover i {
+#close-cart-btn:hover i {
 	margin-right: 15px;
 }
 
-#close-cart:active i {
+#close-cart-btn:active i {
 	transform: scale(1.3);
 }
 

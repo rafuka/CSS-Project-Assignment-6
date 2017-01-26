@@ -1,10 +1,9 @@
 var shopItems = document.getElementsByClassName("product");
 console.log(shopItems);
 
-var cartBtn = document.getElementById("cart-btn");
 var cart = document.getElementById("cart");
-
-cartBtn.addEventListener("click", openCart, false);
+var openCartBtn = document.getElementById("open-cart-btn");
+var closeCartBtn = document.getElementById("close-cart-btn");
 
 function openCart(e) {
 
@@ -16,4 +15,26 @@ function closeCart(e) {
 
 	cart.classList.remove("visible");
 	document.body.classList.remove("popup");
-}
+}		
+
+openCartBtn.addEventListener("click", openCart, false);
+closeCartBtn.addEventListener("click", closeCart, false);
+
+var cartList = [
+	{
+		title: 'Buggawats',
+		desc: '',
+		price: '',
+		img: '',
+		qty: 0
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{}
+];
