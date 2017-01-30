@@ -163,10 +163,15 @@ article.product button:active {
 	color: #12adbf;
 }
 
+.product-price {
+
+}
+
 .cplus {
 	font-size: 32px!important;
 	vertical-align: middle;
 	margin-right: 15px;
+	margin-left: 10px;
 }
 
 #close-cart-btn {
@@ -387,7 +392,10 @@ button.remove:active {
 	width: 90%;
 	margin: 0px auto;
 	border-radius: 10px;
+	max-height: 73vh;
+    overflow: scroll;
 }
+
 #cart-grid {
 	background-color: white;
 }
