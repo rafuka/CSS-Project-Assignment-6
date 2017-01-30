@@ -4,7 +4,10 @@ var cartContainer = document.getElementById("cart-container");
 var shop = document.getElementById("grid");
 var openCartBtn = document.getElementById("open-cart-btn");
 var closeCartBtn = document.getElementById("close-cart-btn");
-var coupon = "DEADBEEF";
+var coupon1 = "DEADBEEF"; // 10% off a particular item
+var coupon2 = "BLAHBLAH"; // 15% off items that cost more than 10$
+var coupon3 = "YADAYADA"; // 5% off the total price
+
 var couponElement = document.querySelector('#coupon');
 
 var totalPrice = 0;
@@ -12,7 +15,7 @@ var cartList = [
 	{
 		id: 'product-1',
 		cartId: 'cart-product-1',
-		title: 'Buggawats',
+		title: 'Buggawatts',
 		desc: '',
 		price: 10,
 		img: 'http://placehold.it/200x200',
@@ -40,18 +43,23 @@ var cartList = [
 
 updateTotalPrice();
 
+
+// Displays the cart
 function openCart(e) {
 
 	cart.classList.add("visible");
 	document.body.classList.add("popup");
 }
 
+// Closes cart and displays shop
 function closeCart(e) {
 
 	cart.classList.remove("visible");
 	document.body.classList.remove("popup");
 }		
 
+// Adds an element to the cart. If the cart already contains that element, then increase quantity by 1, 
+//     else create a new cart item and add it to the cart item's list
 function addToCart(shopElement) {
 
 	for (var i in cartList) {
@@ -65,25 +73,59 @@ function addToCart(shopElement) {
 		}
 	}
 
-	
 	createNewCartItem(shopElement);
 	updateTotalPrice();
 	return;
 }
 
+// Updates and displays the total price. Check for coupons before calculating the price.
 function updateTotalPrice() {
+	
 	totalPrice = 0;
-	for (var i in cartList) {
-		totalPrice += (cartList[i].price * cartList[i].qty);
+
+	if (couponElement.value === coupon1) {
+		console.log("inside if");
+		for (var i in cartList) {
+			if (cartList[i].title === 'Buggawatts') {
+				console.log("inside second if");
+				totalPrice += (cartList[i].price * cartList[i].qty) - (cartList[i].price * cartList[i].qty * 0.1);
+			}
+			else {
+				totalPrice += (cartList[i].price * cartList[i].qty);
+			}
+		}
 	}
 
-	if (couponElement.value === coupon) {
-		totalPrice -= totalPrice * 0.1;
+	else if (couponElement.value === coupon2) {
+		for (var i in cartList) {
+			if (cartList[i].price >= 10.0) {
+				totalPrice += ((cartList[i].price * cartList[i].qty) - (cartList[i].price * cartList[i].qty * 0.15));
+			}
+			else {
+				totalPrice += (cartList[i].price * cartList[i].qty);
+			}
+		}
+	}
+
+	else if (couponElement.value === coupon3) {
+		for (var i in cartList) {
+			totalPrice += (cartList[i].price * cartList[i].qty);
+		}
+
+		totalPrice -= totalPrice * 0.05;
+	}
+
+	else {
+		for (var i in cartList) {
+			totalPrice += (cartList[i].price * cartList[i].qty);
+		}
 	}
 
 	document.querySelector('#total-price p').innerHTML = totalPrice.toFixed(2) + '$';
 }
 
+// Creates a new cart item using the information of the passed shopElement, then adds it to the list,
+//     then creates an HTML element for the cart item and appends it to the cart.
 function createNewCartItem(shopElement) {
 
 	var newCartItem = {
@@ -215,6 +257,7 @@ function createNewCartItem(shopElement) {
 	cartContainer.appendChild(newCartElement);
 }
 
+// Removes an item from the cart's list and from the cart. Then updates the total price.
 function removeFromCart(cartElement) {
 	for (var i in cartList) {
 		if (cartList[i].cartId === cartElement.id) {
@@ -223,12 +266,14 @@ function removeFromCart(cartElement) {
 						"' from your Cart?"))
 			{
 				cartList.splice(i, 1);
-				cartElement.parentNode.removeChild(cartElement);			
+				cartElement.parentNode.removeChild(cartElement);
+				updateTotalPrice();
+				return true;			
 			}
 		}
 	}
 
-	updateTotalPrice();
+	return false;	
 }
 
 
@@ -256,13 +301,22 @@ cart.addEventListener("click", function(e) {
 		
 		for (var i in cartList) {
 			if (cartList[i].cartId === cartElement.id) {
-				if (cartList[i].qty > 1) {
-					cartList[i].qty--;
+				if (cartList[i].qty >= 1) {
+					
+					cartList[i].qty--;		
 					document.querySelector('#' + cartElement.id + ' .quantity input').value--;
-					updateTotalPrice();
+				}
+
+				if (cartList[i].qty == 0) {
+
+					if (!removeFromCart(cartElement)) {
+						cartList[i].qty = 1;
+						document.querySelector('#' + cartElement.id + ' .quantity input').value = 1;
+					}
 				}
 			}
-		}	
+		}
+		updateTotalPrice();	
 	}
 
 	if (e.target.classList.contains('plus')) {
@@ -280,7 +334,10 @@ cart.addEventListener("click", function(e) {
 });
 
 couponElement.addEventListener("input", function(e) {
-	if (couponElement.value === coupon) {
+	if (couponElement.value === coupon1 ||
+		couponElement.value === coupon2 ||
+		couponElement.value === coupon3)
+	{
 		couponElement.style.backgroundColor = "#8f8";
 	}
 	else {
@@ -288,7 +345,6 @@ couponElement.addEventListener("input", function(e) {
 	}
 
 	updateTotalPrice();
-	
 });
 
 
