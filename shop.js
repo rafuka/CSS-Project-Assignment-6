@@ -331,7 +331,8 @@ cart.addEventListener("click", function(e) {
 				}
 			}
 		}
-		updateTotalPrice();	
+		updateTotalPrice();
+		updateCartNumber();
 	}
 
 	if (e.target.classList.contains('plus')) {
@@ -343,6 +344,7 @@ cart.addEventListener("click", function(e) {
 				cartList[i].qty++;
 				document.querySelector('#' + cartElement.id + ' .quantity input').value++;
 				updateTotalPrice();
+				updateCartNumber();
 			}
 		}
 	}
