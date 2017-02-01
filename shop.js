@@ -42,6 +42,7 @@ var cartList = [
 ];
 
 updateTotalPrice();
+updateCartNumber();
 
 
 // Displays the cart
@@ -69,12 +70,14 @@ function addToCart(shopElement) {
 			// update quantity value on cart
 			document.querySelector('#' + cartList[i].cartId + ' .quantity input').value++;
 			updateTotalPrice();
+			updateCartNumber();
 			return;
 		}
 	}
 
 	createNewCartItem(shopElement);
 	updateTotalPrice();
+	updateCartNumber();
 	return;
 }
 
@@ -268,12 +271,24 @@ function removeFromCart(cartElement) {
 				cartList.splice(i, 1);
 				cartElement.parentNode.removeChild(cartElement);
 				updateTotalPrice();
+				updateCartNumber();
 				return true;			
 			}
 		}
 	}
 
 	return false;	
+}
+
+// Updates the number in the open cart button
+function updateCartNumber() {
+	var totalItems = 0;
+	for (var i in cartList) {
+		totalItems += cartList[i].qty;
+	}
+
+	var cartNum = document.getElementById("cart-num");
+	cartNum.innerHTML = totalItems;
 }
 
 
