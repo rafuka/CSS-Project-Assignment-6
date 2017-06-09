@@ -56,7 +56,6 @@ main {
     background-color: #ff4928;
     z-index: 999;
     transition: all .2s ease-in-out;
-
 }
 
 #open-cart-btn:hover {
@@ -160,6 +159,7 @@ article.product button:active {
 	display: block;
 	margin: 20px auto;
 	height: 200px;
+	float: left;
 }
 
 .product-title {
@@ -252,6 +252,7 @@ article.cart-product .product-img {
 	width: 40%;
 	overflow-y: scroll;
 	vertical-align: top;
+	float: left;
 }
 
 .quantity {
@@ -260,6 +261,7 @@ article.cart-product .product-img {
 	margin-left: 40px;
 	margin-bottom: 20px;
 	overflow: hidden;
+	float: left;
 }
 
 .quantity h2, .price h2 {
@@ -311,6 +313,7 @@ input.qnum {
 	display: inline-block;
 	margin-left: 40px;
 	vertical-align: top;
+	float: left;
 }
 
 .price p {
@@ -386,6 +389,8 @@ button.remove:active {
 
 .button-wrap {
 	overflow: hidden;
+	display: block;
+    clear: both;
 }
 
 #cart {
@@ -428,6 +433,7 @@ button.add-to-cart span {
     display: inline-block;
     vertical-align: middle;
 }
+
 /* Taken from CSS-Tricks (https://css-tricks.com/snippets/css/turn-off-number-input-spinners/)
    to remove number spinners */
 input[type=number]::-webkit-inner-spin-button, 
@@ -435,3 +441,7 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+
+
+
