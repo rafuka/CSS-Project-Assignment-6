@@ -159,7 +159,7 @@ article.product button:active {
 	display: block;
 	margin: 20px auto;
 	height: 200px;
-	float: left;
+
 }
 
 .product-title {
@@ -243,8 +243,9 @@ article.cart-product p {
 
 article.cart-product .product-img {
 	display: inline-block;
-	margin: 0px;
+	margin: 0px 0px 10px 0px;
 	margin-right: 40px;
+	float: left;
 }
 
 .description {
