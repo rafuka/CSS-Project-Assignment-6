@@ -151,7 +151,7 @@ nav.izi-navbar {
   display: -ms-flexbox;
   display: flex;
   min-height: 80px;
-  background-color: black;
+  background-color: #ff7400;
   -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
   padding: 0px 15px;
@@ -239,7 +239,7 @@ nav.izi-navbar {
         opacity: 1;
         cursor: pointer; }
     nav.izi-navbar ul.izi-navbar__main .dropdown__menu {
-      background-color: black;
+      background-color: #ff7400;
       border-radius: 0px 0px 5px 5px;
       color: white;
       display: -webkit-box;
@@ -288,7 +288,7 @@ nav.izi-navbar {
     nav.izi-navbar label.hamburguer {
       display: inline-block; }
     nav.izi-navbar ul.izi-navbar__main {
-      background-color: black;
+      background-color: #ff7400;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -317,7 +317,7 @@ nav.izi-navbar {
         transition: color .2s ease, background-color .2s ease; }
         nav.izi-navbar ul.izi-navbar__main li a:hover {
           background-color: white;
-          color: black;
+          color: #ff7400;
           cursor: pointer; }
       nav.izi-navbar ul.izi-navbar__main.mobile-left {
         height: 100vh;
@@ -326,7 +326,7 @@ nav.izi-navbar {
           text-align: left; }
       nav.izi-navbar ul.izi-navbar__main .dropdown__toggle:checked ~ .dropdown__title {
         background-color: white;
-        color: black; }
+        color: #ff7400; }
       nav.izi-navbar ul.izi-navbar__main .dropdown__toggle:checked ~ .dropdown__menu {
         max-height: 1000px;
         max-height: 80vh; }
@@ -340,9 +340,9 @@ nav.izi-navbar {
         position: relative; }
         nav.izi-navbar ul.izi-navbar__main .dropdown__title:hover {
           background-color: white;
-          color: black; }
+          color: #ff7400; }
           nav.izi-navbar ul.izi-navbar__main .dropdown__title:hover .plus-sign span {
-            background-color: black; }
+            background-color: #ff7400; }
       nav.izi-navbar ul.izi-navbar__main .dropdown__menu {
         display: block;
         position: static;
@@ -366,7 +366,7 @@ nav.izi-navbar {
     display: inline-block; }
 
   input.dropdown__toggle:checked + .dropdown__title > .plus-sign span {
-    background-color: black; }
+    background-color: #ff7400; }
     input.dropdown__toggle:checked + .dropdown__title > .plus-sign span:first-child {
       -webkit-transform: rotate(-90deg);
               transform: rotate(-90deg); }
@@ -424,10 +424,10 @@ nav.izi-navbar {
   .izi-btn:hover {
     cursor: pointer; }
   .izi-btn--primary {
-    background-color: #972cfe;
+    background-color: red;
     color: white; }
     .izi-btn--primary:active {
-      background-color: #7e01f6; }
+      background-color: #cc0000; }
   .izi-btn--success {
     background-color: #47ce01;
     color: white; }
@@ -452,7 +452,7 @@ nav.izi-navbar {
       -webkit-transform: scale(1);
               transform: scale(1); }
       .izi-btn--hover:active.izi-btn--primary {
-        background-color: #972cfe; }
+        background-color: red; }
       .izi-btn--hover:active.izi-btn--success {
         background-color: #47ce01; }
       .izi-btn--hover:active.izi-btn--danger {
@@ -470,7 +470,7 @@ nav.izi-navbar {
       -webkit-box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.3);
               box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.3); }
       .izi-btn--pressable:active.izi-btn--primary {
-        background-color: #972cfe; }
+        background-color: red; }
       .izi-btn--pressable:active.izi-btn--success {
         background-color: #47ce01; }
       .izi-btn--pressable:active.izi-btn--danger {
@@ -498,7 +498,7 @@ nav.izi-navbar {
       transition: height .2s ease, box-shadow .2s ease;
       transition: height .2s ease, box-shadow .2s ease, -webkit-box-shadow .2s ease; }
     .izi-btn--pressable-2.izi-btn--primary:after {
-      background-color: #7101dc; }
+      background-color: #b30000; }
     .izi-btn--pressable-2.izi-btn--success:after {
       background-color: #2d8201; }
     .izi-btn--pressable-2.izi-btn--danger:after {
@@ -512,7 +512,7 @@ nav.izi-navbar {
     .izi-btn--pressable-2:active {
       top: 0px; }
       .izi-btn--pressable-2:active.izi-btn--primary {
-        background-color: #972cfe; }
+        background-color: red; }
       .izi-btn--pressable-2:active.izi-btn--success {
         background-color: #47ce01; }
       .izi-btn--pressable-2:active.izi-btn--danger {
@@ -521,20 +521,20 @@ nav.izi-navbar {
         height: 2px; }
 
 .accordion__tab {
-  background-color: #7e01f6;
+  background-color: #cc0000;
   color: white;
   padding: 10px;
-  border: 1px solid #c992fe; }
+  border: 1px solid #ff6666; }
   .accordion__tab:hover {
     cursor: pointer; }
 .accordion__panel {
   overflow: hidden;
   -webkit-transition: height .3s ease;
   transition: height .3s ease;
-  border-left: 1px solid #c992fe;
-  border-right: 1px solid #c992fe; }
+  border-left: 1px solid #ff6666;
+  border-right: 1px solid #ff6666; }
   .accordion__panel:last-child {
-    border-bottom: 1px solid #c992fe; }
+    border-bottom: 1px solid #ff6666; }
 
 .tabs {
   position: relative;
@@ -553,13 +553,13 @@ nav.izi-navbar {
     z-index: 1; }
     .tabs__tab--active {
       border-bottom: none;
-      color: #972cfe; }
+      color: red; }
     .tabs__tab:hover {
       cursor: pointer; }
     .tabs__tab--underline {
       border: none; }
       .tabs__tab--underline:after {
-        background-color: #972cfe;
+        background-color: red;
         content: '';
         position: absolute;
         top: 100%;
@@ -569,14 +569,14 @@ nav.izi-navbar {
         -webkit-transition: all .3s ease;
         transition: all .3s ease; }
       .tabs__tab--underline.tabs__tab--active {
-        color: #972cfe; }
+        color: red; }
         .tabs__tab--underline.tabs__tab--active:after {
           left: 0;
           width: 100%; }
     .tabs__tab--pill {
       border: none; }
       .tabs__tab--pill.tabs__tab--active {
-        background-color: #972cfe;
+        background-color: red;
         color: white;
         border-radius: 5px; }
         .tabs__tab--pill.tabs__tab--active:after {
@@ -623,7 +623,7 @@ nav.izi-navbar {
     width: calc(100% - 20px - 20px); }
   .carousel__label {
     border-radius: 50%;
-    border: 1px solid #972cfe;
+    border: 1px solid red;
     cursor: pointer;
     display: inline-block;
     height: 10px;
@@ -633,10 +633,10 @@ nav.izi-navbar {
             user-select: none;
     width: 10px; }
     .carousel__label--selected {
-      background-color: #972cfe; }
+      background-color: red; }
   .carousel__arrow-right, .carousel__arrow-left {
     cursor: pointer;
-    color: #972cfe;
+    color: red;
     font-size: 1.4em;
     position: absolute;
     -webkit-transition: font-size .1s ease;
@@ -670,13 +670,13 @@ nav.izi-navbar {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  border: 2px solid #972cfe;
+  border: 2px solid red;
   border-radius: 50%;
   position: relative;
   width: 22px;
   height: 22px; }
   .izi-radio:after {
-    background-color: #972cfe;
+    background-color: red;
     border-radius: 50%;
     content: '';
     display: inline-block;
@@ -706,7 +706,7 @@ nav.izi-navbar {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  border: 2px solid #972cfe;
+  border: 2px solid red;
   border-radius: 3px;
   cursor: pointer;
   position: relative;
@@ -733,14 +733,14 @@ nav.izi-navbar {
       width: 16px; }
     .izi-checkbox--switch:checked {
       background-color: white;
-      border-color: #972cfe; }
+      border-color: red; }
       .izi-checkbox--switch:checked:after {
-        background-color: #972cfe;
+        background-color: red;
         left: 23px; }
   .izi-checkbox--nobox {
     border: none; }
     .izi-checkbox--nobox:after {
-      border: 2px solid #972cfe;
+      border: 2px solid red;
       border-radius: 3px;
       height: 18px;
       left: 0;
@@ -751,15 +751,15 @@ nav.izi-navbar {
       .izi-checkbox--nobox:checked:after {
         width: 7px;
         border: none;
-        border-bottom: 2px solid #972cfe;
-        border-right: 2px solid #972cfe;
+        border-bottom: 2px solid red;
+        border-right: 2px solid red;
         border-radius: 0px;
         -webkit-transform: rotate(45deg);
                 transform: rotate(45deg);
         top: -2px;
         left: 6px; }
   .izi-checkbox--filled:before {
-    background-color: #972cfe;
+    background-color: red;
     width: 0px;
     height: 0px;
     top: 50%;
@@ -793,8 +793,8 @@ nav.izi-navbar {
   .izi-checkbox--default:checked {
     background-color: white; }
     .izi-checkbox--default:checked:after {
-      border-right: 2px solid #972cfe;
-      border-bottom: 2px solid #972cfe;
+      border-right: 2px solid red;
+      border-bottom: 2px solid red;
       -webkit-transform: rotate(45deg);
               transform: rotate(45deg);
       width: 5px;
@@ -811,7 +811,7 @@ nav.izi-navbar {
   height: 100%;
   width: 100%; }
   .modal__header {
-    background-color: #972cfe;
+    background-color: red;
     color: white;
     padding: 10px; }
   .modal__body {
@@ -933,11 +933,72 @@ nav.izi-navbar {
     background-color: lightblue; }
 
 * {
-  font-family: 'Roboto';
-  color: red; }
+  font-family: 'Roboto'; }
+
+body {
+  min-width: 320px; }
 
 .container-fixed {
   max-width: 960px;
   margin: 0 auto; }
+
+.logo {
+  font-weight: bold;
+  color: white;
+  font-size: 1.2em;
+  width: 50px; }
+
+main {
+  background-color: red;
+  padding: 30px 0px; }
+  main > .container-fixed {
+    background-color: red;
+    min-height: calc(100vh - 80px); }
+
+.navbar-fix {
+  border-top: 80px solid transparent; }
+
+.card__content h1 {
+  margin-bottom: 30px; }
+
+.izi-navbar__main {
+  font-weight: bold; }
+
+.fa-cart-plus {
+  font-size: 2em;
+  margin-left: 5px;
+  vertical-align: middle; }
+
+.add-to-cart-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  float: right; }
+  .add-to-cart-btn:focus {
+    outline: none;
+    border: none; }
+  .add-to-cart-btn::-moz-focus-inner {
+    border: 0; }
+
+.shop-item {
+  width: 270px; }
+  .shop-item header {
+    height: 170px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+    .shop-item header img {
+      margin-top: -50px; }
+  .shop-item footer:after {
+    content: '';
+    clear: both;
+    display: block; }
+
+@media screen and (max-width: 720px) {
+  .izi-navbar__main {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #ff7400), to(red));
+    background: linear-gradient(#ff7400 30%, red); } }
 
 /*# sourceMappingURL=main-prefixed.css.map */
