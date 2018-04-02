@@ -1,0 +1,50 @@
+
+
+[class^="container"] {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+[class^="container"] > [class^="container"] {
+  display: inline-flex;
+  width: initial;
+}
+
+.container {
+  &-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-row {
+    display: flex;
+    flex-direction: row;
+  } 
+}
+
+.izi-banner {
+  padding: 50px;
+  width: 100%;
+
+  h1 {
+    font-size: 3em;
+    margin: 40px 0px;
+  }
+
+  h2 {
+    margin: 30px 0px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .izi-banner {
+    padding: 50px 20px;
+  }
+}

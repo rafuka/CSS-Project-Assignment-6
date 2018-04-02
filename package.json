@@ -1,0 +1,39 @@
+{
+  "name": "shopping-cart",
+  "version": "1.0.0",
+  "description": "A project built for under Bov Academy Front End Development career path.",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafuka/ShoppingCart.git"
+  },
+  "keywords": [
+    "shopping",
+    "cart",
+    "GUI"
+  ],
+  "author": "Rafuka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafuka/ShoppingCart/issues"
+  },
+  "homepage": "https://github.com/rafuka/ShoppingCart#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.1.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-csscomb": "^3.1.1",
+    "grunt-postcss": "^0.9.0",
+    "grunt-prettysass": "^0.2.3",
+    "grunt-scss-stylize": "^0.6.0"
+  }
+}

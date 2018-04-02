@@ -2,179 +2,38 @@
 <html>
 <head>
 	<title>Product Listing</title>
-	<link rel="stylesheet" href="styles.css">
-	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<script src="https://use.fontawesome.com/eb20e08f34.js"></script>
+	
+	
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="dist/css/main.min.css">
 </head>
 <body>
 	
-	<main>
-		<div id="shop">
-			<header>
-				<h1>Our Products</h1>
-				<nav>
-					<button id="open-cart-btn"><span id="cart-num">0</span><i id="cart-icon" class="fa fa-opencart"></i></button>
-				</nav>
-			</header>
+	<header>
+		<nav class="izi-navbar">
+			<div class="container-fixed">
+				<a class="logo">LOGO</a>
+			    <input type="checkbox" name="mobile-btn" id="mobile-btn">
+			    <label for="mobile-btn" class="hamburguer">
+			      <span></span>
+			      <span></span>
+			      <span></span>
+			      <span></span>
+			    </label>
+											
+			    <ul class="izi-navbar__main mobile-left">
+			        <li><a href="#">Log In</a></li>
+			        
+			        <li><a href="#">Cart</a></li>
+			    </ul>
+			</div>  
+		</nav>
+	</header>
 
-			<div id="grid">
-				<article class="product" id="product-1">
-					<h2 class="product-title">Buggawatts</h2>
-					<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
-					<p class="product-description">Order our Buggawatts packets and never miss those interesting scents of the city. Just a little amount on each nosetril and you're set to smell the world as you've never had before. Specially fun when travelling to new places!</p>
-					<span class="product-price">10</span>
-					<button class="add-to-cart"><i class="fa fa-cart-plus cplus" aria-hidden="true"></i><span>add to cart</span></button>
-				</article>
-				<article class="product" id="product-2">
-					<h2 class="product-title">Schwein</h2>
-					<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
-					<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. </p>
-					<span class="product-price">12</span>
-					<button class="add-to-cart"><i class="fa fa-cart-plus cplus" aria-hidden="true"></i><span>add to cart</span></button>
-				</article>
-				<article class="product" id="product-3">
-					<h2 class="product-title">Moonswing</h2>
-					<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
-					<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. </p>
-					<span class="product-price">19</span>
-					<button class="add-to-cart"><i class="fa fa-cart-plus cplus" aria-hidden="true"></i><span>add to cart</span></button>
-				</article>
-				<article class="product" id="product-4">
-					<h2 class="product-title">Jawaka</h2>
-					<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
-					<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. </p>
-					<span class="product-price">9.99</span>
-					<button class="add-to-cart"><i class="fa fa-cart-plus cplus" aria-hidden="true"></i><span>add to cart</span></button>
-				</article>
-				<article class="product" id="product-5">
-					<h2 class="product-title">Product Name</h2>
-					<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
-					<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. </p>
-					<span class="product-price">15.99</span>
-					<button class="add-to-cart"><i class="fa fa-cart-plus cplus" aria-hidden="true"></i><span>add to cart</span></button>
-				</article>
-				<article class="product" id="product-6">
-					<h2 class="product-title">Product Name</h2>
-					<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
-					<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. </p>
-					<span class="product-price">10</span>
-					<button class="add-to-cart"><i class="fa fa-cart-plus cplus" aria-hidden="true"></i><span>add to cart</span></button>
-				</article>
-				<article class="product" id="product-7">
-					<h2 class="product-title">Product Name</h2>
-					<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
-					<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday</p>
-					<span class="product-price">17</span>
-					<button class="add-to-cart"><i class="fa fa-cart-plus cplus" aria-hidden="true"></i><span>add to cart</span></button>
-				</article>
-				<article class="product" id="product-8">
-					<h2 class="product-title">Product Name</h2>
-					<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
-					<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. </p>
-					<span class="product-price">14.99</span>
-					<button class="add-to-cart"><i class="fa fa-cart-plus cplus" aria-hidden="true"></i><span>add to cart</span></button>
-				</article>
-				<article class="product" id="product-9">
-					<h2 class="product-title">Product Name</h2>
-					<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
-					<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. </p>
-					<span class="product-price">10</span>
-					<button class="add-to-cart"><i class="fa fa-cart-plus cplus" aria-hidden="true"></i><span>add to cart</span></button>
-				</article>
-				<article class="product" id="product-10">
-					<h2 class="product-title">Product Name</h2>
-					<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
-					<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. </p>
-					<span class="product-price">10</span>
-					<button class="add-to-cart"><i class="fa fa-cart-plus cplus" aria-hidden="true"></i><span>add to cart</span></button>
-				</article>
-			</div>
-		</div>
-		<div id="cart">
-			<header> 
-				<h1>Your Cart</h1>
-				<nav>
-					<a id="close-cart-btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> Keep Shopping</a>
-				</nav>
-			</header>
-			
-			<div id="cart-container">
-				<article class="cart-product" id="cart-product-1">
-					<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
-					<div class="description">
-						<h2 class="product-title">Buggawatts</h2>
-						<p class="product-description">Order our Buggawatts packets and never miss those interesting scents of the city. Just a little amount on each nosetril and you're set to smell the world as you've never had before. Specially fun when travelling to new places!</p>
-					</div>
-					<div class="price">
-						<h2>Price</h2>
-						<p>10$</p>
-					</div>
-					<div class="quantity">
-						<h2>Quantity</h2>
-						<button class="less">-</button><!--
-						--><input class="qnum" type="number" name="product-quantity" value="1" disabled><!--
-						--><button class="plus">+</button>
-					</div>
-					<div class="button-wrap">
-						<button class="remove">Remove from Cart</button>
-					</div>
-				</article>
-				<article class="cart-product" id="cart-product-4">
-					<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
-					<div class="description">
-						<h2 class="product-title">Jawaka</h2>
-						<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. </p>
-					</div>
-					<div class="price">
-						<h2>Price</h2>
-						<p>9.99$<p>
-					</div>
-					<div class="quantity">
-						<h2>Quantity</h2>
-						<button class="less">-</button><!--
-						--><input class="qnum" type="number" name="product-quantity" value="1" disabled><!--
-						--><button class="plus">+</button>
-					</div>
-					<div class="button-wrap">
-						<button class="remove">Remove from Cart</button>
-					</div>
-				</article>
-				<article class="cart-product" id="cart-product-2">
-					<img class="product-img" src="http://placehold.it/200x200" title="product image" alt="product image">
-					<div class="description">
-						<h2 class="product-title">Schwein</h2>
-						<p class="product-description">Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. Yadayada yada yday day yaydaydyay ydaydyaydaydy aydyay ydady yady yadyaydyaydyaydyaydyaydyayday. </p>
-					</div>
-					<div class="price">
-						<h2>Price</h2>
-						<p>12$</p>
-					</div>
-					<div class="quantity">
-						<h2>Quantity</h2>
-						<button class="less">-</button><!--
-						--><input class="qnum" type="number" name="product-quantity" value="1" disabled><!--
-						--><button class="plus">+</button>
-					</div>
-					<div class="button-wrap">
-						<button class="remove">Remove from Cart</button>
-					</div>
-				</article>
-				
-			</div>
-			<div id="total-price">
-				<label id="coupon-label" for="coupon">Coupon Code</label>
-				<input type="text" name="coupon" id="coupon">
-				<h2>Total Price</h2>
-				<p>$$$$</p>
-			</div>
-			<a id="check-out" href="#">Check Out! <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-		</div>
-	</main>
+	<main></main>
+
+	<footer></footer>
 	
-	
-	<script type="text/javascript" src="shop.js"></script>
+	<script type="text/javascript" src="dist/scripts/built.min.js"></script>
 </body>
 </html>

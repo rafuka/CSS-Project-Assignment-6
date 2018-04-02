@@ -1,3 +1,5 @@
+
+
 var shopItems = document.getElementsByClassName("product");
 var cart = document.getElementById("cart");
 var cartContainer = document.getElementById("cart-container");
@@ -87,10 +89,10 @@ function updateTotalPrice() {
 	totalPrice = 0;
 
 	if (couponElement.value === coupon1) {
-		console.log("inside if");
+
 		for (var i in cartList) {
 			if (cartList[i].title === 'Buggawatts') {
-				console.log("inside second if");
+
 				totalPrice += (cartList[i].price * cartList[i].qty) - (cartList[i].price * cartList[i].qty * 0.1);
 			}
 			else {

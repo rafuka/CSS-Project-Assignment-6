@@ -1,0 +1,124 @@
+.izi-sticky-pack {
+	background-color: white;
+	border-radius: 0px 20px 20px 0px;
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+	position: fixed;
+	top: 85%;
+	left: 0;
+	
+	&__tooltip {
+		background-color: rgba(0,0,0,0.7);
+		border-radius: 50% 50% 50% 0px;
+		bottom: calc(100% + 2px);
+		color: white;
+		display: none;
+		font-size: .8em;
+		padding: 15px;
+		position: absolute; 
+		left: calc(100% + 2px);
+		text-align: center;	
+		width: 130px;
+	}
+
+	&__icon {
+		cursor: pointer;
+		display: flex;
+		padding: 10px;
+
+		span {
+			display: inline-block;
+			width: 7px;
+			height: 21px;
+
+			&:nth-child(1) {
+				background-color: #f6ff06;
+				border-radius: 3px 0px 0px 3px;
+			}
+
+			&:nth-child(2) {
+				background-color: #08d211;
+			}
+
+			&:nth-child(3) {
+				background-color: #fe296d;
+				border-radius: 0px 3px 3px 0px;
+			}
+		}
+
+		&:hover {
+			color: red;
+			& ~ .izi-sticky-pack__tooltip {
+				display: inline-block;
+			}
+		}	
+	}
+
+	&__create {
+		width: 40px;
+		height: 40px;
+	}
+
+	&__color {
+		width: 20px;
+		height: 20px;
+		padding: 15px;
+		border-radius: 50%;
+		background-color: #f6ff06;
+	}
+
+	&__note {
+		border-radius: 3px;
+		display: inlien-block;
+		position: fixed;
+		background-color: #ffff00;
+		font-weight: bold;
+		width: 150px;
+		height: 150px;
+		box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+		z-index: 2;
+		padding: 7px;
+		transtion: all 2s ease;
+		cursor: move;
+		cursor: grab;
+
+		&:hover {
+			
+		}
+
+		&:active {
+			cursor: grabbing;
+		}
+
+		&--yellow {
+			background-color: #f6ff06;
+		}
+
+		&--green {
+			background-color: #08d211;
+		}
+
+		&--pink {
+			background-color: #fe296d;
+		}
+	}
+
+	&__note-edit {
+		position: absolute;
+		color: white;
+		width: 15px;
+		height: 15px;
+		background-color: yellow;
+
+		&:hover {
+			background-color: blue
+
+		}
+	}
+
+	&__note-pin {
+		padding: 10px;
+		position: absolute;
+		top: 80%;
+		background-color: lightblue;
+	}
+}
