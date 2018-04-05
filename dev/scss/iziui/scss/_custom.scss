@@ -1,6 +1,5 @@
 * {
 	font-family: 'Roboto';
-
 }
 
 body {
@@ -84,11 +83,14 @@ main {
 
 	footer {
 
-		&:after {
-			content: '';
-			clear: both;
-			display: block;
-		}
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__price {
+		color: #009f4b;
+		font-size: 1.4em;
 	}
 }
 

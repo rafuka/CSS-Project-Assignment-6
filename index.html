@@ -3,6 +3,8 @@
 <head>
 	<title>Product Listing</title>
 	
+	<meta charset="utf-8">
+
 	
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="dist/css/main.min.css">
@@ -26,27 +28,28 @@
 			    <ul class="izi-navbar__main mobile-left">
 			        <li><a href="#">Log In</a></li>
 			        
-			        <li><a href="#">Cart</a></li>
+			        <li><a href="#" class="toggle-cart-btn">Cart <span id="cart-num">0</span></a></li>
 			    </ul>
 			</div>  
 		</nav>
 	</header>
 	<main class="navbar-fix">
-		<div class="container-row container-fixed" id="shop-container">
-			<article class="shop-item card card--item">
+		<div class="container-row container-fixed" id="shop-listing">
+			<article class="shop-item card card--item" id="product-1">
 				<header>
-			        <img src="dist/assets/placeholder450x450.png">
+			        <img class="shop-item__image" src="dist/assets/placeholder450x450.png">
 			    </header>
 			    <div class="card__content">
-			        <h1>Item 1</h1>
-			        <p>This is a placeholder Item.</p>
-			        <p>This is some info about the item.</p>
+			        <h1 class="shop-item__title">Item 1</h1>
+			        <p class="shop-item__description">This is a placeholder Item.<br>
+			        Here goes some info about the item.</p>
 			    </div>
 			    <footer>
+			    	<span class="shop-item__price">$19.99</span>
 			        <button class="izi-btn izi-btn--primary add-to-cart-btn"><p>Add to cart!</p><span class="fa fa-cart-plus"></span></button>
 			    </footer>
 			</article>
-			<article class="shop-item card card--item">
+			<article class="shop-item card card--item" id="product-2">
 				<header>
 			        <img src="dist/assets/placeholder450x450.png">
 			    </header>
@@ -56,10 +59,11 @@
 			        <p>This is some info about the item.</p>
 			    </div>
 			    <footer>
+			    	<span class="item-price">$9.99</span>
 			        <button class="izi-btn izi-btn--primary add-to-cart-btn"><p>Add to cart!</p><span class="fa fa-cart-plus"></span></button>
 			    </footer>
 			</article>
-			<article class="shop-item card card--item">
+			<article class="shop-item card card--item" id="product-3">
 				<header>
 			        <img src="dist/assets/placeholder450x450.png">
 			    </header>
@@ -69,10 +73,11 @@
 			        <p>This is some info about the item.</p>
 			    </div>
 			    <footer>
+			    	<span class="item-price">$12.89</span>
 			        <button class="izi-btn izi-btn--primary add-to-cart-btn"><p>Add to cart!</p><span class="fa fa-cart-plus"></span></button>
 			    </footer>
 			</article>
-			<article class="shop-item card card--item">
+			<article class="shop-item card card--item" id="product-4">
 				<header>
 			        <img src="dist/assets/placeholder450x450.png">
 			    </header>
@@ -82,10 +87,11 @@
 			        <p>This is some info about the item.</p>
 			    </div>
 			    <footer>
+			    	<span class="item-price">$10.79</span>
 			        <button class="izi-btn izi-btn--primary add-to-cart-btn"><p>Add to cart!</p><span class="fa fa-cart-plus"></span></button>
 			    </footer>
 			</article>
-			<article class="shop-item card card--item">
+			<article class="shop-item card card--item" id="product-5">
 				<header>
 			        <img src="dist/assets/placeholder450x450.png">
 			    </header>
@@ -95,10 +101,11 @@
 			        <p>This is some info about the item.</p>
 			    </div>
 			    <footer>
+			    	<span class="item-price">$12.99</span>
 			        <button class="izi-btn izi-btn--primary add-to-cart-btn"><p>Add to cart!</p><span class="fa fa-cart-plus"></span></button>
 			    </footer>
 			</article>
-			<article class="shop-item card card--item">
+			<article class="shop-item card card--item" id="product-6">
 				<header>
 			        <img src="dist/assets/placeholder450x450.png">
 			    </header>
@@ -108,10 +115,11 @@
 			        <p>This is some info about the item.</p>
 			    </div>
 			    <footer>
+			    	<span class="item-price">$7.99</span>
 			        <button class="izi-btn izi-btn--primary add-to-cart-btn"><p>Add to cart!</p><span class="fa fa-cart-plus"></span></button>
 			    </footer>
 			</article>
-			<article class="shop-item card card--item">
+			<article class="shop-item card card--item" id="product-7">
 				<header>
 			        <img src="dist/assets/placeholder450x450.png">
 			    </header>
@@ -121,22 +129,36 @@
 			        <p>This is some info about the item.</p>
 			    </div>
 			    <footer>
+			    	<span class="item-price">$25.89</span>
 			        <button class="izi-btn izi-btn--primary add-to-cart-btn"><p>Add to cart!</p><span class="fa fa-cart-plus"></span></button>
 			    </footer>
 			</article>
-			<article class="shop-item card card--item">
+			<article class="shop-item card card--item" id="product-8">
 				<header>
 			        <img src="dist/assets/placeholder450x450.png">
 			    </header>
 			    <div class="card__content">
-			        <h1>Item 7</h1>
+			        <h1>Item 8</h1>
 			        <p>This is a placeholder Item.</p>
 			        <p>This is some info about the item.</p>
 			    </div>
 			    <footer>
+			    	<span class="item-price">$15.89</span>
 			        <button class="izi-btn izi-btn--primary add-to-cart-btn"><p>Add to cart!</p><span class="fa fa-cart-plus"></span></button>
 			    </footer>
 			</article>
+		</div>
+
+		<div id="cart">
+			<div class="container-row" id="cart-container">
+				
+			</div>
+			
+
+			<input type="text" name="coupon" id="coupon">
+			<div id="total-price">
+				<p></p>
+			</div>
 		</div>
 	</main>
 	<footer>

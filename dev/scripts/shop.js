@@ -1,19 +1,18 @@
 
 
-var shopItems = document.getElementsByClassName("product");
-var cart = document.getElementById("cart");
-var cartContainer = document.getElementById("cart-container");
-var shop = document.getElementById("grid");
-var openCartBtn = document.getElementById("open-cart-btn");
-var closeCartBtn = document.getElementById("close-cart-btn");
-var coupon1 = "DEADBEEF"; // 10% off a particular item
-var coupon2 = "BLAHBLAH"; // 15% off items that cost more than 10$
-var coupon3 = "YADAYADA"; // 5% off the total price
+var shopItems 		= document.getElementsByClassName("product");
+var cart 			= document.getElementById("cart");
+var cartContainer 	= document.getElementById("cart-container");
+var shop 			= document.getElementById("shop-listing");
+var toggleCartBtns 	= document.getElementsByClassName("toggle-cart-btn");
+var coupon1 		= "DEADBEEF"; // 10% off a particular item
+var coupon2 		= "BLAHBLAH"; // 15% off items that cost more than 10$
+var coupon3 		= "YADAYADA"; // 5% off the total price
 
-var couponElement = document.querySelector('#coupon');
+var couponElement 	= document.querySelector('#coupon');
 
-var totalPrice = 0;
-var cartList = [
+var totalPrice 		= 0;
+var cartList 		= [
 	{
 		id: 'product-1',
 		cartId: 'cart-product-1',
@@ -48,29 +47,25 @@ updateCartNumber();
 
 
 // Displays the cart
-function openCart(e) {
+function toggleCart(e) {
 
-	cart.classList.add("visible");
-	document.body.classList.add("popup");
+	cart.classList.toggle("visible");
+	document.body.classList.toggle("popup");
 }
 
-// Closes cart and displays shop
-function closeCart(e) {
-
-	cart.classList.remove("visible");
-	document.body.classList.remove("popup");
-}		
+		
 
 // Adds an element to the cart. If the cart already contains that element, then increase quantity by 1, 
 //     else create a new cart item and add it to the cart item's list
 function addToCart(shopElement) {
 
 	for (var i in cartList) {
-
+		console.log(i);
 		if (cartList[i].id == shopElement.id) {
 			cartList[i].qty++;
 			// update quantity value on cart
-			document.querySelector('#' + cartList[i].cartId + ' .quantity input').value++;
+			var val = document.querySelector('#' + cartList[i].cartId + ' .quantity input');
+			if (val) val.value++;
 			updateTotalPrice();
 			updateCartNumber();
 			return;
@@ -91,7 +86,7 @@ function updateTotalPrice() {
 	if (couponElement.value === coupon1) {
 
 		for (var i in cartList) {
-			if (cartList[i].title === 'Buggawatts') {
+			if (cartList[i].id === 'product-1') {
 
 				totalPrice += (cartList[i].price * cartList[i].qty) - (cartList[i].price * cartList[i].qty * 0.1);
 			}
@@ -129,18 +124,18 @@ function updateTotalPrice() {
 	document.querySelector('#total-price p').innerHTML = totalPrice.toFixed(2) + '$';
 }
 
-// Creates a new cart item using the information of the passed shopElement, then adds it to the list,
-//     then creates an HTML element for the cart item and appends it to the cart.
+// Creates a new cart item using the information of the shopElement parameter, then adds it to the list,
+//     creates an HTML element for the cart item, and appends it to the cart.
 function createNewCartItem(shopElement) {
 
 	var newCartItem = {
 
 		id: shopElement.id,
 		cartId: 'cart-' + shopElement.id,
-		title: shopElement.querySelector('.product-title').innerHTML,
-		img: shopElement.querySelector('.product-img').getAttribute('src'),
-		desc: shopElement.querySelector('.product-description').innerHTML,
-		price: shopElement.querySelector('.product-price').innerHTML,
+		title: shopElement.querySelector('.shop-item__title').innerHTML,
+		img: shopElement.querySelector('.shop-item__image').getAttribute('src'),
+		desc: shopElement.querySelector('.shop-item__description').innerHTML,
+		price: shopElement.querySelector('.shop-item__price').innerHTML,
 		qty: 1
 	};
 
@@ -149,20 +144,20 @@ function createNewCartItem(shopElement) {
 	// Parent element
 	var newCartElement = document.createElement("article");
 
-	newCartElement.className = "cart-product";
+	newCartElement.className = 'shop-item';
 	newCartElement.id = newCartItem.cartId;
 
 	// Level 1 children
 	var newImg = document.createElement("img");
 
-	newImg.className = "product-img";
+	newImg.className = "shop-item__img";
 	newImg.src = newCartItem.img;
 	newImg.title = "product image";
 	newImg.alt = "product image";
 
 	var newDesc = document.createElement("div");
 
-	newDesc.className = "description";
+	newDesc.className = "shop-item__description";
 
 	var newPrice = document.createElement("div");
 
@@ -212,16 +207,16 @@ function createNewCartItem(shopElement) {
 
 	// Text nodes
 
-	var newTitleText = document.createTextNode("" + newCartItem.title);
-	var newDescText = document.createTextNode("" + newCartItem.desc);
-	var newPriceText = document.createTextNode("Price");
-	var newPriceNum = document.createTextNode("" + newCartItem.price + "$");
-	var newQtyText = document.createTextNode("Quantity");
-	var newLess = document.createTextNode("-");
-	newLess.className = "less";
-	var newPlus = document.createTextNode("+");
-	newPlus.className = "plus";
-	var newRemoveText = document.createTextNode("Remove from Cart");
+	var newTitleText 	= document.createTextNode("" + newCartItem.title);
+	var newDescText 	= document.createTextNode("" + newCartItem.desc);
+	var newPriceText 	= document.createTextNode("Price");
+	var newPriceNum 	= document.createTextNode("" + newCartItem.price + "$");
+	var newQtyText 		= document.createTextNode("Quantity");
+	var newLess 		= document.createTextNode("-");
+	newLess.className 	= "less";
+	var newPlus 		= document.createTextNode("+");
+	newPlus.className 	= "plus";
+	var newRemoveText 	= document.createTextNode("Remove from Cart");
 
 	// Append text nodes to level 2 children
 
@@ -268,18 +263,19 @@ function removeFromCart(cartElement) {
 		if (cartList[i].cartId === cartElement.id) {
 			if (confirm("Are you sure you want to remove the item '" + 
 						cartElement.querySelector('.product-title').innerHTML +
-						"' from your Cart?"))
+						"' from your Cart?")
+			)
 			{
 				cartList.splice(i, 1);
 				cartElement.parentNode.removeChild(cartElement);
 				updateTotalPrice();
 				updateCartNumber();
-				return true;			
+				return true;
 			}
 		}
 	}
 
-	return false;	
+	return false;
 }
 
 // Updates the number in the open cart button
@@ -294,15 +290,23 @@ function updateCartNumber() {
 }
 
 
-openCartBtn.addEventListener("click", openCart, false);
-closeCartBtn.addEventListener("click", closeCart, false);
+for (var i = 0; i < toggleCartBtns.length; i++) {
+	(function(i){
+		toggleCartBtns[i].addEventListener("click", toggleCart, false);
+	})(i);
+}
+  
 
 shop.addEventListener("click", function(e) {
-	if (e.target.classList.contains('add-to-cart')) {
-		
-		var shopElement = e.target.parentNode;
+	if (e.target.classList.contains('add-to-cart-btn')) {
+		console.log('hey')
+		var shopElement = e.target.parentNode.parentNode;
+		console.log('shop element: ');
+		console.log(shopElement);
 		addToCart(shopElement);
 	}
+	console.log('ho');
+	if (e.target.id === 'product-1') console.log('let\'s go');
 });
 
 cart.addEventListener("click", function(e) {

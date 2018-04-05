@@ -991,10 +991,19 @@ main {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
     .shop-item header img {
       margin-top: -50px; }
-  .shop-item footer:after {
-    content: '';
-    clear: both;
-    display: block; }
+  .shop-item footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .shop-item__price {
+    color: #009f4b;
+    font-size: 1.4em; }
 
 @media screen and (max-width: 720px) {
   .izi-navbar__main {
