@@ -42,8 +42,18 @@ var cartList 		= [
 	}
 ];
 
-updateTotalPrice();
-updateCartNumber();
+var cartListLength = cartList.length;
+
+for (var i = 0; i < cartListLength; i++) {
+	var shopElement = document.getElementById(cartList[i].id);
+	//console.log(shopElement);
+	createNewCartItem(shopElement);
+	updateTotalPrice();
+	updateCartNumber();
+}
+
+/*updateTotalPrice();
+updateCartNumber();*/
 
 
 // Displays the cart
@@ -58,11 +68,28 @@ function toggleCart(e) {
 // Adds an element to the cart. If the cart already contains that element, then increase quantity by 1, 
 //     else create a new cart item and add it to the cart item's list
 function addToCart(shopElement) {
+	//console.log(shopElement);
 
-	for (var i in cartList) {
+	for (var i = 0; i < cartList.length; i++) {
+
+		var cartItem = cartList[i];
+
+		if (cartItem.id === shopElement.id) {
+			cartItem.qty++;
+			var qtty = document.querySelector('#' + cartList[i].cartId + ' .quantity input');
+			if (qtty) qtty.value++;
+			updateTotalPrice();
+			updateCartNumber();
+			return;
+		}
+	}
+	console.log('oh naw');
+	/*for (var i in cartList) {
 		console.log(i);
 		if (cartList[i].id == shopElement.id) {
+			console.log('inside if');
 			cartList[i].qty++;
+			console.log(cartList[i].qty);
 			// update quantity value on cart
 			var val = document.querySelector('#' + cartList[i].cartId + ' .quantity input');
 			if (val) val.value++;
@@ -70,7 +97,7 @@ function addToCart(shopElement) {
 			updateCartNumber();
 			return;
 		}
-	}
+	}*/
 
 	createNewCartItem(shopElement);
 	updateTotalPrice();
@@ -295,18 +322,16 @@ for (var i = 0; i < toggleCartBtns.length; i++) {
 		toggleCartBtns[i].addEventListener("click", toggleCart, false);
 	})(i);
 }
+
+
   
 
 shop.addEventListener("click", function(e) {
 	if (e.target.classList.contains('add-to-cart-btn')) {
-		console.log('hey')
+
 		var shopElement = e.target.parentNode.parentNode;
-		console.log('shop element: ');
-		console.log(shopElement);
 		addToCart(shopElement);
 	}
-	console.log('ho');
-	if (e.target.id === 'product-1') console.log('let\'s go');
 });
 
 cart.addEventListener("click", function(e) {
