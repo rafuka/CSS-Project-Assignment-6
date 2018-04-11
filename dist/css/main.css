@@ -825,15 +825,13 @@ body {
   min-width: 320px;
   position: relative;
   left: 0px;
-  transition: left .4s ease; }
+  transition: left .4s ease;
+  overflow: hidden; }
   body nav.izi-navbar {
     left: 0px;
     transition: left .4s ease; }
   body.popup {
-    overflow: hidden;
-    left: -100%; }
-    body.popup nav.izi-navbar {
-      left: -100%; }
+    overflow: hidden; }
 
 .container-fixed {
   max-width: 960px;
@@ -893,13 +891,21 @@ main {
     color: #009f4b;
     font-size: 1.4em; }
 
+#shop-listing {
+  position: absolute;
+  left: -100%;
+  transition: left .4s ease;
+  overflow: hidden;
+  height: 100vh; }
+  #shop-listing.visible {
+    left: 0px;
+    overflow: auto; }
+
 #cart {
   left: 100%;
-  position: fixed;
-  top: 0px;
+  position: absolute;
   transition: left .4s ease; }
   #cart.visible {
-    background-color: #fff;
     height: 100vh;
     left: 0px;
     width: 100vw;

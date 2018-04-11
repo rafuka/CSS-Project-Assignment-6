@@ -14,35 +14,35 @@ var couponElement 	= document.querySelector('#coupon');
 var totalPrice 		= 0;
 var cartList 		= [
 	{
-		id: 'product-1',
-		cartId: 'cart-product-1',
-		title: 'Buggawatts',
+		id: 'product-8',
+		cartId: 'cart-product-8',
+		title: 'Item 8',
 		desc: '',
-		price: 10,
-		img: 'http://placehold.it/200x200',
+		price: 19.99,
+		img: 'dist/assets/placeholder450x450.png',
 		qty: 1
 	},
 	{
-		id: 'product-4',
-		cartId: 'cart-product-4',
-		title: 'Jawaka',
+		id: 'product-5',
+		cartId: 'cart-product-5',
+		title: 'Item 5',
 		desc: '',
-		price: 9.99,
-		img: 'http://placehold.it/200x200',
+		price: 19.99,
+		img: 'dist/assets/placeholder450x450.png',
 		qty: 1
 	},
 	{
-		id: 'product-2',
-		cartId: 'cart-product-2',
-		title: 'Schwein',
+		id: 'product-3',
+		cartId: 'cart-product-3',
+		title: 'Item 3',
 		desc: '',
-		price: 12,
-		img: 'http://placehold.it/200x200',
+		price: 19.99,
+		img: 'dist/assets/placeholder450x450.png',
 		qty: 1
 	}
 ];
 
-var cartListLength = cartList.length;
+/* TEST var cartListLength = cartList.length;
 
 for (var i = 0; i < cartListLength; i++) {
 	var shopElement = document.getElementById(cartList[i].id);
@@ -50,7 +50,7 @@ for (var i = 0; i < cartListLength; i++) {
 	createNewCartItem(shopElement);
 	updateTotalPrice();
 	updateCartNumber();
-}
+} */
 
 /*updateTotalPrice();
 updateCartNumber();*/
@@ -60,7 +60,8 @@ updateCartNumber();*/
 function toggleCart(e) {
 
 	cart.classList.toggle("visible");
-	document.body.classList.toggle("popup");
+	shop.classList.toggle("visible");
+	//document.body.classList.toggle("popup");
 }
 
 		
@@ -165,6 +166,7 @@ function createNewCartItem(shopElement) {
 		price: shopElement.querySelector('.shop-item__price').innerHTML,
 		qty: 1
 	};
+
 
 	cartList.push(newCartItem);
 
