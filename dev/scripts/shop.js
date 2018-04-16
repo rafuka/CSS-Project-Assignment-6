@@ -9,6 +9,9 @@ var coupon1 		= "DEADBEEF"; // 10% off a particular item
 var coupon2 		= "BLAHBLAH"; // 15% off items that cost more than 10$
 var coupon3 		= "YADAYADA"; // 5% off the total price
 
+var cartWrapper = document.getElementById('cart-wrapper');
+var shopWrapper = document.getElementById('shop-wrapper');
+
 var couponElement 	= document.querySelector('#coupon');
 
 var totalPrice 		= 0;
@@ -59,8 +62,8 @@ updateCartNumber();*/
 // Displays the cart
 function toggleCart(e) {
 
-	cart.classList.toggle("visible");
-	shop.classList.toggle("visible");
+	cartWrapper.classList.toggle("visible");
+	shopWrapper.classList.toggle("visible");
 	//document.body.classList.toggle("popup");
 }
 

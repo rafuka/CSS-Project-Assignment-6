@@ -36,14 +36,40 @@ body {
 }
 
 main {
-
+	overflow: hidden;
 	background-color: red;
-	padding: 30px 0px;
 	position: relative;
+	height: 100vh;
+	white-space: nowrap;
 
 	> .container-fixed {
 		background-color: red;
 		min-height: calc(100vh - 80px);
+	}
+}
+
+.wrapper {
+	display: inline-block;
+	height: 100%;
+	position: relative;
+	top: 0px;
+	transition: left .4s ease;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	overflow-y: auto;
+}
+
+#shop-wrapper {
+	left: -100%;
+	&.visible {
+		left: 0px;
+	}
+}
+
+#cart-wrapper {
+	left: 0px;
+	&.visible {
+		left: -100%;
 	}
 }
 
@@ -109,35 +135,76 @@ main {
 		color: #009f4b;
 		font-size: 1.4em;
 	}
+
+	&__quantity {
+		display: flex;
+		align-items: center;
+	}
+}
+
+#quantity {
+	border: none;
+	background-color: transparent;
+	width: 50px;
+	text-align: center;
 }
 
 #shop-listing {
-	position: absolute;
-	left: -100%;
+	padding: 40px 0px;
+	position: relative;
 	transition: left .4s ease;
 	overflow: hidden;
-	height: 100vh;
 
-	&.visible {
-		left: 0px;
-		overflow: auto;
-	}
 }
+
 
 
 #cart {
-	left: 100%;
-	position: absolute;
+	top: 0px;
+	position: relative;
 	transition: left .4s ease;
 
-	&.visible {
-		
-		height: 100vh;
-		left: 0px;
-		width: 100vw;
-		z-index: 2;
+	.shop-item {
+
+		width: 100%;
+		max-width: 650px;
+
+		display: flex;
+		flex-wrap: wrap;
+
+		header {
+
+			width: 170px;
+
+			img {
+				margin-top: 0px;
+			}
+		}
+
+		&__content {
+			flex: 1;
+		}
+
+		footer {
+			flex-direction: column;
+			justify-content: space-around;
+
+		}
+
+		&__quantity {
+
+			&:before {
+				content: '&mult;';
+				display: inline;
+				position: absolute;
+				color: red;
+			}
+
+		}
 	}
 }
+
+
 
 @media screen and (max-width: 720px) {
 	.izi-navbar {
