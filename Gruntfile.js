@@ -4,21 +4,33 @@ module.exports = function(grunt) {
   
     watch: {
       css: {
-        files: 'dev/scss/iziui/scss/**/*.scss', 
-        tasks: ['sass', 'cssmin']
+        files: 'dev/scss/**/*.scss', 
+        tasks: ['sass', 'cssmin'],
+        options: {
+          livereload: true,
+        }
       },
       
       js: {
         files: 'dev/scripts/**/*.js',
-        tasks: ['concat', 'uglify']
+        tasks: ['concat', 'uglify'],
+        options: {
+          livereload: true,
+        }
       },
+      html: {
+        files: 'index.html',
+        options: {
+          livereload: true,
+        }
+      }
       
     },
 
     sass: {
       dev: {
         files: {
-          'dist/css/main.css' : 'dev/scss/iziui/scss/main.scss'
+          'dist/css/main.css' : 'dev/scss/main.scss'
         }
       }
     },

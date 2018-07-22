@@ -6,23 +6,61 @@
 	<meta charset="utf-8">
 
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
 	<link rel="stylesheet" href="dist/css/main.min.css">
 </head>
 <body>
 	
 	<header>
-		<nav class="main-nav">
-			
+		<nav class="navbar">
+			<a href="#"><h1 class="navbar__logo">SHOP<br/>LOGO</h1></a>
+			<ul class="navbar__menu">
+				<li class="navbar__item">
+					<a href="#">Log In</a>
+				</li>
+				<li class="navbar__item">
+					<a href="#">Cart<i class="fa fa-shopping-cart"></i></a>
+				</li>
+			</ul>
 		</nav>
 	</header>
-	<main class="shop">
-		
+	<main id="shop">
+		<ul id="shop-list"></ul>
 	</main>
-	<footer>
+	<section id="cart">
+		<ul id="cart-list"></ul>
+	</section>
+	<footer class="main-footer">
 		
 	</footer>
 	
-	<!-- PRODUCTION MODE <script type="text/javascript" src="dist/scripts/built.min.js"></script>-->
-	<script type="text/javascript" src="dev/scripts/shop.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+	<script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+
+	<script id="shop-template" type="text/x-handlebars-template">
+		{{#each items}}
+			<li id="item-{{ id }}" class="shop-item">
+				<header class="shop-item__header">
+					<img class="shop-item__image" src="{{ thumbnail }}">
+					<div class="shop-item__options">
+						<a class="shop-item__details" href="#">View details</a>
+						<a class="shop-item__add-btn">Add to Cart<i class="fa fa-cart-plus"></i></a>
+					</div>	
+				</header>
+				<div class="shop-item__info">
+					<h2 class="shop-item__title">{{ title }}</h2>
+					<div class="shop-item__price">{{ price }}</div>
+					<p class="shop-item__description">{{ description }}</p>
+				</div>
+			</li>
+		{{/each}}
+	</script>
+
+	<!--PRODUCTION <script type="text/javascript" src="dist/scripts/built.min.js"></script>-->
+	<script type="text/javascript" src="dist/scripts/built.js"></script>
+<script src="//localhost:35729/livereload.js"></script>
 </body>
 </html>
