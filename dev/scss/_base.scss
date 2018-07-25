@@ -38,6 +38,11 @@
 	}
 }
 
+#cart-num {
+	color: white;
+	margin-left: 5px;
+}
+
 main {
 	padding-top: 80px;
 }
@@ -114,14 +119,13 @@ main {
 	}
 
 	&__title {
-		font-size: 1.5em;
+		font-size: 1.2em;
 		font-weight: bold;
 		width: 70%;
 	}
 
 	&__price {
 		color: $btn-primary;
-		font-size: 1.1em;
 		text-align: center;
 		width: 30%;
 	}
@@ -133,8 +137,6 @@ main {
 		overflow: hidden;
 		width: 100%;
 	}
-
-	
 }
 
 .fa-shopping-cart {
@@ -148,4 +150,16 @@ main {
 	font-size: 1.5em;
 	margin-left: 5px;
 	vertical-align: middle;
+}
+
+.modal-overlay {
+	display: none;
+	background-color: black;
+	opacity: .8;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 2;
 }

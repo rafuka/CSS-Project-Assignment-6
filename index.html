@@ -19,7 +19,7 @@
 					<a href="#">Log In</a>
 				</li>
 				<li class="navbar__item">
-					<a href="#">Cart<i class="fa fa-shopping-cart"></i></a>
+					<a href="#">Cart<i class="fa fa-shopping-cart"></i><span id="cart-num">0</span></a>
 				</li>
 			</ul>
 		</nav>
@@ -33,6 +33,8 @@
 	<footer class="main-footer">
 		
 	</footer>
+
+	<div class="modal-overlay"></div>
 	
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 	<script
@@ -53,7 +55,7 @@
 				<div class="shop-item__info">
 					<h2 class="shop-item__title">{{ title }}</h2>
 					<div class="shop-item__price">{{ price }}</div>
-					<p class="shop-item__description">{{ description }}</p>
+					<p class="shop-item__description">{{ descshort }}</p>
 				</div>
 			</li>
 		{{/each}}

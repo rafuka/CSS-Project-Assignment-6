@@ -39,6 +39,10 @@
     .navbar__item a:hover {
       opacity: 1; }
 
+#cart-num {
+  color: white;
+  margin-left: 5px; }
+
 main {
   padding-top: 80px; }
 
@@ -91,12 +95,11 @@ main {
     flex-wrap: wrap;
     padding: 12px; }
   .shop-item__title {
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
     width: 70%; }
   .shop-item__price {
     color: #ff7139;
-    font-size: 1.1em;
     text-align: center;
     width: 30%; }
   .shop-item__description {
@@ -116,5 +119,16 @@ main {
   font-size: 1.5em;
   margin-left: 5px;
   vertical-align: middle; }
+
+.modal-overlay {
+  display: none;
+  background-color: black;
+  opacity: .8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2; }
 
 /*# sourceMappingURL=main.css.map */

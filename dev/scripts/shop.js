@@ -17,6 +17,10 @@
 		console.log('buy!');
 	});
 
+	shopList.on('click', '.shop-item__details', function() {
+		console.log('details');
+	});
+
 	console.log(shopList);
 
 	
