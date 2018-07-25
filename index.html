@@ -19,22 +19,25 @@
 					<a href="#">Log In</a>
 				</li>
 				<li class="navbar__item">
-					<a href="#">Cart<i class="fa fa-shopping-cart"></i><span id="cart-num">0</span></a>
+					<a class="cart-toggle" href="#">Cart<i class="fa fa-shopping-cart"></i><span id="cart-num">0</span></a>
 				</li>
 			</ul>
 		</nav>
 	</header>
+
 	<main id="shop">
 		<ul id="shop-list"></ul>
 	</main>
+
 	<section id="cart">
 		<ul id="cart-list"></ul>
 	</section>
+
 	<footer class="main-footer">
 		
 	</footer>
 
-	<div class="modal-overlay"></div>
+	<div id="modal-overlay" class="cart-toggle"></div>
 	
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 	<script
@@ -42,13 +45,14 @@
 			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 			  crossorigin="anonymous"></script>
 
+	<!-- Handlebars Templates -->
 	<script id="shop-template" type="text/x-handlebars-template">
 		{{#each items}}
 			<li id="item-{{ id }}" class="shop-item">
 				<header class="shop-item__header">
 					<img class="shop-item__image" src="{{ thumbnail }}">
 					<div class="shop-item__options">
-						<a class="shop-item__details" href="#">View details</a>
+						<a class="shop-item__details view-item-details" href="#">View details</a>
 						<a class="shop-item__add-btn">Add to Cart<i class="fa fa-cart-plus"></i></a>
 					</div>	
 				</header>
@@ -61,7 +65,28 @@
 		{{/each}}
 	</script>
 
+	<script id="cart-template" type="text/x-handlebars-template">
+		{{#each items}}
+			<li id="cart-item-{{ id }}" class="cart-item">
+				<img class="cart-item__image" src="{{ thumbnail }}">
+				<div class="cart-item__info">
+					<h3 class="cart-item__title">{{ title }}</h3>
+					<div class="cart-item__price">{{ price }}</div>
+					<p class="cart-item__description">{{ descshort }}</p>
+				</div>
+				<div class="cart-item__options">
+					<button class="cart-item__remove"></button>
+					<input class="cart-item__qty" type="text" name="cart-item-qty">
+					<button class="cart-item__less">-</button>
+					<button class="cart-btn__plus">+</button>
+				</div>
+			</li>
+		{{/each}}
+	</script>
+	<!-- /Handlebars Templates -->
+
 	<!--PRODUCTION <script type="text/javascript" src="dist/scripts/built.min.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
 	<script type="text/javascript" src="dist/scripts/built.js"></script>
 <script src="//localhost:35729/livereload.js"></script>
 </body>

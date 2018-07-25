@@ -13,6 +13,13 @@
   padding: 0px;
   text-decoration: none; }
 
+body {
+  height: 100%;
+  overflow-x: hidden; }
+
+.no-scroll {
+  overflow: hidden; }
+
 .navbar {
   align-items: center;
   background-color: black;
@@ -22,7 +29,7 @@
   opacity: .9;
   position: fixed;
   width: 100%;
-  z-index: 1; }
+  z-index: 2; }
   .navbar__logo {
     color: white;
     font-weight: bold;
@@ -109,6 +116,16 @@ main {
     overflow: hidden;
     width: 100%; }
 
+#cart {
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  position: absolute;
+  left: 100%;
+  top: 60px;
+  width: 50%;
+  z-index: 2; }
+
 .fa-shopping-cart {
   color: white;
   font-size: 1.3em;
@@ -120,7 +137,7 @@ main {
   margin-left: 5px;
   vertical-align: middle; }
 
-.modal-overlay {
+#modal-overlay {
   display: none;
   background-color: black;
   opacity: .8;
@@ -129,6 +146,6 @@ main {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 2; }
+  z-index: 1; }
 
 /*# sourceMappingURL=main.css.map */
