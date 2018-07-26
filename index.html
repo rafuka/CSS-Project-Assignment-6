@@ -19,7 +19,7 @@
 					<a href="#">Log In</a>
 				</li>
 				<li class="navbar__item">
-					<a class="cart-toggle" href="#">Cart<i class="fa fa-shopping-cart"></i><span id="cart-num">0</span></a>
+					<a class="cart-toggle" href="#"><i id="cart-icon" class="fa fa-shopping-cart"></i><span id="cart-num">0</span></a>
 				</li>
 			</ul>
 		</nav>
@@ -31,6 +31,16 @@
 
 	<section id="cart">
 		<ul id="cart-list"></ul>
+		<footer class="cart-footer">
+			<div class="cart-footer__coupon">
+				<label class="cart-footer__coupon-label" for="coupon">Coupon:</label>
+				<input class="cart-footer__coupon-input" id="coupon" type="text" maxlength="8" name="coupon">
+				<button class="cart-footer__coupon-apply">Apply</button>
+			</div>
+			
+			<div class="cart-footer__price">Total: <span id="total-price">0.00</span> $</div>
+			<button class="cart-footer__checkout">Check Out</button>
+		</footer>
 	</section>
 
 	<footer class="main-footer">
@@ -58,7 +68,7 @@
 				</header>
 				<div class="shop-item__info">
 					<h2 class="shop-item__title">{{ title }}</h2>
-					<div class="shop-item__price">{{ price }}</div>
+					<div class="shop-item__price">{{ price }} $</div>
 					<p class="shop-item__description">{{ descshort }}</p>
 				</div>
 			</li>
@@ -71,12 +81,12 @@
 				<img class="cart-item__image" src="{{ thumbnail }}">
 				<div class="cart-item__info">
 					<h3 class="cart-item__title">{{ title }}</h3>
-					<div class="cart-item__price">{{ price }}</div>
+					<div class="cart-item__price">{{ price }} $</div>
 					<p class="cart-item__description">{{ descshort }}</p>
 				</div>
 				<div class="cart-item__options">
 					<button class="cart-item__remove"></button>
-					<input class="cart-item__qty" type="text" name="cart-item-qty">
+					<input class="cart-item__qty" type="text" name="cart-item-qty" value="{{ qty }}">
 					<button class="cart-item__less">-</button>
 					<button class="cart-btn__plus">+</button>
 				</div>
