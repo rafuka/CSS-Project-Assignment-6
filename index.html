@@ -85,10 +85,10 @@
 					<p class="cart-item__description">{{ descshort }}</p>
 				</div>
 				<div class="cart-item__options">
-					<button class="cart-item__remove"></button>
-					<input class="cart-item__qty" type="text" name="cart-item-qty" value="{{ qty }}">
-					<button class="cart-item__less">-</button>
-					<button class="cart-btn__plus">+</button>
+					<button class="cart-item__remove">x</button>
+					<input class="cart-item__qty" type="text" name="cart-item-qty" disabled value="{{ qty }}">
+					<button class="cart-item__less"></button>
+					<button class="cart-item__plus"></button>
 				</div>
 			</li>
 		{{/each}}
