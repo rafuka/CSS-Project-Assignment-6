@@ -33,6 +33,8 @@
 		<ul id="shop-list"></ul>
 	</main>
 
+	<div id="item-details-modal" class="item-details"></div>
+
 	<section id="cart">
 		<ul id="cart-list"></ul>
 		<footer class="cart-footer">
@@ -41,7 +43,6 @@
 				<input class="cart-footer__coupon-input" id="coupon" type="text" maxlength="8" name="coupon">
 				<button class="cart-footer__coupon-apply">Apply</button>
 			</div>
-			
 			<div class="cart-footer__price">Total: <span id="total-price">0.00</span> $</div>
 			<button class="cart-footer__checkout">Check Out</button>
 		</footer>
@@ -51,7 +52,7 @@
 		
 	</footer>
 
-	<div id="modal-overlay" class="cart-toggle"></div>
+	<div id="modal-overlay"></div>
 	
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 	<script
@@ -77,6 +78,20 @@
 				</div>
 			</li>
 		{{/each}}
+	</script>
+
+	<script id="item-details-template" type="text/x-handlebars-template">
+		<div class="carousel">
+			<div class="carousel__images-container">
+				{{#each images}}
+				<img class="carousel__image" src="{{ imgurl }}">
+				{{/each}}
+			</div>
+			<div class="carousel__control-left"></div>
+			<div class="carousel__control-right"></div>
+		</div>
+		<h2 class="item-details__title">{{ title }}</h2>
+		<p class="item-details__description">{{ desclong }}</p>
 	</script>
 
 	<script id="cart-template" type="text/x-handlebars-template">

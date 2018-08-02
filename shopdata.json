@@ -6,7 +6,18 @@
 			"price": 9.99,
 			"descshort": "This is some short description about the item.",
 			"desclong": "This is a longer discription about the item. Lorem Ipsum blah blah Yadayada.",
-			"thumbnail": "dist/assets/placeholder.png"
+			"thumbnail": "dist/assets/placeholder.png",
+			"images": [
+				{
+					"imgurl": "dist/assets/camera1.jpeg"
+				},
+				{
+					"imgurl": "dist/assets/camera2.jpeg"
+				},
+				{
+					"imgurl": "dist/assets/camera3.jpeg"
+				}
+			]
 		},
 		{
 			"id": 2,
@@ -14,7 +25,18 @@
 			"price": 19.99,
 			"descshort": "This is some short description about the item.",
 			"desclong": "This is a longer discription about the item. Lorem Ipsum blah blah Yadayada.",
-			"thumbnail": "dist/assets/placeholder.png"
+			"thumbnail": "dist/assets/placeholder.png",
+			"images": [
+				{
+					"imgurl": "dist/assets/camera1.jpeg"
+				},
+				{
+					"imgurl": "dist/assets/camera2.jpeg"
+				},
+				{
+					"imgurl": "dist/assets/camera3.jpeg"
+				}
+			]
 		},
 		{
 			"id": 3,
@@ -22,7 +44,18 @@
 			"price": 7.99,
 			"descshort": "This is some short description about the item.",
 			"desclong": "This is a longer discription about the item. Lorem Ipsum blah blah Yadayada.",
-			"thumbnail": "dist/assets/placeholder.png"
+			"thumbnail": "dist/assets/placeholder.png",
+			"images": [
+				{
+					"imgurl": "dist/assets/camera1.jpeg"
+				},
+				{
+					"imgurl": "dist/assets/camera2.jpeg"
+				},
+				{
+					"imgurl": "dist/assets/camera3.jpeg"
+				}
+			]
 		},
 		{
 			"id": 4,
@@ -30,7 +63,18 @@
 			"price": 5.99,
 			"descshort": "This is some short description about the item.",
 			"desclong": "This is a longer discription about the item. Lorem Ipsum blah blah Yadayada.",
-			"thumbnail": "dist/assets/placeholder.png"
+			"thumbnail": "dist/assets/placeholder.png",
+			"images": [
+				{
+					"imgurl": "dist/assets/camera1.jpeg"
+				},
+				{
+					"imgurl": "dist/assets/camera2.jpeg"
+				},
+				{
+					"imgurl": "dist/assets/camera3.jpeg"
+				}
+			]
 		},
 		{
 			"id": 5,
@@ -38,7 +82,18 @@
 			"price": 8.99,
 			"descshort": "This is some short description about the item.",
 			"desclong": "This is a longer discription about the item. Lorem Ipsum blah blah Yadayada.",
-			"thumbnail": "dist/assets/placeholder.png"
+			"thumbnail": "dist/assets/placeholder.png",
+			"images": [
+				{
+					"imgurl": "dist/assets/camera1.jpeg"
+				},
+				{
+					"imgurl": "dist/assets/camera2.jpeg"
+				},
+				{
+					"imgurl": "dist/assets/camera3.jpeg"
+				}
+			]
 		},
 		{
 			"id": 6,
@@ -46,7 +101,18 @@
 			"price": 10.99,
 			"descshort": "This is some short description about the item.",
 			"desclong": "This is a longer discription about the item. Lorem Ipsum blah blah Yadayada.",
-			"thumbnail": "dist/assets/placeholder.png"
+			"thumbnail": "dist/assets/placeholder.png",
+			"images": [
+				{
+					"imgurl": "dist/assets/camera1.jpeg"
+				},
+				{
+					"imgurl": "dist/assets/camera2.jpeg"
+				},
+				{
+					"imgurl": "dist/assets/camera3.jpeg"
+				}
+			]
 		},
 		{
 			"id": 7,
@@ -54,7 +120,18 @@
 			"price": 12.99,
 			"descshort": "This is some short description about the item.",
 			"desclong": "This is a longer discription about the item. Lorem Ipsum blah blah Yadayada.",
-			"thumbnail": "dist/assets/placeholder.png"
+			"thumbnail": "dist/assets/placeholder.png",
+			"images": [
+				{
+					"imgurl": "dist/assets/camera1.jpeg"
+				},
+				{
+					"imgurl": "dist/assets/camera2.jpeg"
+				},
+				{
+					"imgurl": "dist/assets/camera3.jpeg"
+				}
+			]
 		}
 	]
 }

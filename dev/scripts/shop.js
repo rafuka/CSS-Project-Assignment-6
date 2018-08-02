@@ -7,11 +7,14 @@
 	
 	// ------- Handlebars Templates & Helpers ------- //
 
-	var shopTemplateHTML = document.getElementById('shop-template').innerHTML;
+	var shopTemplateHTML = $('#shop-template').html();
 	var shopTemplate = Handlebars.compile(shopTemplateHTML);
 
-	var cartTemplateHTML = document.getElementById('cart-template').innerHTML;
+	var cartTemplateHTML = $('#cart-template').html();
 	var cartTemplate = Handlebars.compile(cartTemplateHTML);
+
+	var detailsTemplateHTML = $('#item-details-template').html();
+	var detailsTemplate = Handlebars.compile(detailsTemplateHTML);
 
 	// ------- jQuery Elements ------- //
 
@@ -25,6 +28,7 @@
 	var $cartIcon = $('#cart-icon');
 	var $loadingModal = $('#loading-modal');
 	var $loader = $('#loader');
+	var $detailsModal = $('#item-details-modal');
 
 
 	// Retrieve cart element's from local storage (if any) and update the cart listing.
@@ -118,10 +122,22 @@
 		});
 
 		$shopList.on('click', '.shop-item__details', function(e) {
-			console.log('details');
-		});
 
-		
+			let detailsAnimation = new TimelineMax();
+
+			$('body').addClass('no-scroll');
+
+			detailsAnimation
+			.to($overlay, .5, { 
+				display: 'block',
+				autoAlpha: .8 })
+			.to($detailsModal, .5, {
+				display: 'block',
+				y: '-=75px',
+				autoAlpha: 1
+			});
+
+		});
 
 		$cart.on('click', '.cart-item__less', function(e) {	
 
@@ -190,8 +206,8 @@
 
 	function toggleCart(e) {
 
-		var cartDuration = .7;
-		var overlayDuration = .5;
+		let cartDuration = .7;
+		let overlayDuration = .5;
 
 		if ($cart.hasClass('visible')) {
 			if (!TweenMax.isTweening($cart)) {
