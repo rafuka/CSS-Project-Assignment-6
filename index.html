@@ -25,6 +25,10 @@
 		</nav>
 	</header>
 
+	<div id="loading-modal">
+		<div id="loader"></div>
+	</div>
+
 	<main id="shop">
 		<ul id="shop-list"></ul>
 	</main>
@@ -62,7 +66,7 @@
 				<header class="shop-item__header">
 					<img class="shop-item__image" src="{{ thumbnail }}">
 					<div class="shop-item__options">
-						<a class="shop-item__details view-item-details" href="#">View details</a>
+						<a class="shop-item__details" href="#">View details</a>
 						<a class="shop-item__add-btn">Add to Cart<i class="fa fa-cart-plus"></i></a>
 					</div>	
 				</header>
@@ -85,7 +89,7 @@
 					<p class="cart-item__description">{{ descshort }}</p>
 				</div>
 				<div class="cart-item__options">
-					<button class="cart-item__remove">x</button>
+					<button class="cart-item__remove"></button>
 					<input class="cart-item__qty" type="text" name="cart-item-qty" disabled value="{{ qty }}">
 					<button class="cart-item__less"></button>
 					<button class="cart-item__plus"></button>
