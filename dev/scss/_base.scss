@@ -135,8 +135,6 @@ main {
 	transition: all .3s ease;
 
 	&:hover {
-		//box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
-
 		.shop-item__options {
 			top: calc(100% - 50px);
 		}
@@ -164,7 +162,6 @@ main {
 		top: 100%;
 		transition: all .3s ease;
 		width: 100%;
-
 	}
 
 	&__details, &__add-btn {
@@ -244,7 +241,6 @@ main {
 }
 
 .cart-item {
-
 	align-items: center;
 	display: flex;
 	margin: 10px 0px;
@@ -281,7 +277,6 @@ main {
 		justify-content: center;
 		margin-left: 20px;
 		width: 15%;
-
 	}
 
 	&__remove {
@@ -291,7 +286,6 @@ main {
 		position: absolute;
 		top: 0px;
 		width: 20px;
-		
 
 		&:before, &:after {
 			content: '';
@@ -337,7 +331,6 @@ main {
 			height: 4px;
 			top: calc(50% - 2px);
 			left: calc(50% - 7px);
-
 		}
 	}
 
@@ -402,23 +395,22 @@ main {
 		position: relative;
 		
 		&:after {
-			content: '';
-			position: absolute;
-			width: 10px;
-			height: 10px;
 			border-top: 3px solid white;
 			border-right: 3px solid white;
+			content: '';
+			height: 10px;
+			position: absolute;
 			right: 25px;
 			top: calc(50% - 6px);
 			transform: rotate(45deg);
 			transition: all .3s ease;
+			width: 10px;
 		}
 
 		&:hover {
 
 			&:after {
 				right: 15px;
-
 			}
 		}
 	}
@@ -426,6 +418,7 @@ main {
 
 #item-details-modal {
 	background-color: white;
+	border-radius: 7px;
 	display: none;
 	height: 600px;
 	left: calc(50% - 325px);
@@ -434,7 +427,6 @@ main {
 	top: calc(50% - 200px);
 	width: 650px;
 	z-index: 3;
-
 }
 
 #total-price {
@@ -449,7 +441,7 @@ main {
 	vertical-align: middle;
 }
 
-#modal-overlay {
+#cart-overlay {
 	display: none;
 	background-color: black;
 	opacity: 0;
@@ -459,6 +451,18 @@ main {
 	width: 100vw;
 	height: 100vh;
 	z-index: 1;
+}
+
+#details-overlay {
+	display: none;
+	background-color: black;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 2;
 }
 
 // Media Queries
@@ -475,7 +479,6 @@ main {
 
 		&__options {
 			top: calc(100% - 50px);
-			
 		}
 	}
 
@@ -506,6 +509,6 @@ main {
 // Keyframes
 
 @keyframes spin {
-	0% {transform: rotate(0deg);}
-	100% {transform: rotate(360deg);}
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
 }

@@ -23,13 +23,13 @@
 	var $shopList = $('#shop-list');
 	var $cart = $('#cart');
 	var $cartList = $('#cart-list');
-	var $overlay = $('#modal-overlay');
+	var $cartOverlay = $('#cart-overlay');
 	var $cartNumElm = $('#cart-num');
 	var $cartIcon = $('#cart-icon');
 	var $loadingModal = $('#loading-modal');
 	var $loader = $('#loader');
 	var $detailsModal = $('#item-details-modal');
-
+	var $detailsOverlay = $('#details-overlay');
 
 	// Retrieve cart element's from local storage (if any) and update the cart listing.
 	if (localStorage.getItem('cartData')) {
@@ -121,21 +121,47 @@
 			localStorage.setItem('cartData', JSON.stringify(cartData));
 		});
 
-		$shopList.on('click', '.shop-item__details', function(e) {
+		$('body').on('click', '.details-toggle', function(e) {
 
 			let detailsAnimation = new TimelineMax();
 
-			$('body').addClass('no-scroll');
+			if ($detailsModal.hasClass('visible')) {
+				$('body').removeClass('no-scroll');
+				$detailsOverlay.removeClass('details-toggle');
+				$detailsModal.removeClass('visible');
 
-			detailsAnimation
-			.to($overlay, .5, { 
-				display: 'block',
-				autoAlpha: .8 })
-			.to($detailsModal, .5, {
-				display: 'block',
-				y: '-=75px',
-				autoAlpha: 1
-			});
+				detailsAnimation
+				.to($detailsModal, .3, {
+					display: 'none',
+					
+					autoAlpha: 0
+				})
+				.to($detailsModal, .1, {
+					y: '+=75px'
+				});
+
+				TweenMax.to($detailsOverlay, .3, { 
+					display: 'none',
+					autoAlpha: 0 
+				});
+			}
+			else {
+				$('body').addClass('no-scroll');
+				$detailsOverlay.addClass('details-toggle');
+				$detailsModal.addClass('visible');
+				
+
+				detailsAnimation
+				.to($detailsOverlay, .3, { 
+					display: 'block',
+					autoAlpha: .8 })
+				.to($detailsModal, .5, {
+					display: 'block',
+					y: '-=75px',
+					autoAlpha: 1
+				});
+			}
+			
 
 		});
 
@@ -211,12 +237,13 @@
 
 		if ($cart.hasClass('visible')) {
 			if (!TweenMax.isTweening($cart)) {
-				TweenMax.to($cart, cartDuration, {right: '-650px', ease: Back.easeIn.config(1.2)});
-				$cart.removeClass('visible');
-				$overlay.removeClass('cart-toggle');
-
-				TweenMax.to($overlay, overlayDuration, {display: 'none', opacity: 0});
 				$('body').removeClass('no-scroll');
+				$cart.removeClass('visible');
+				$cartOverlay.removeClass('cart-toggle');
+
+				TweenMax.to($cart, cartDuration, {right: '-650px', ease: Back.easeIn.config(1.2)});
+				TweenMax.to($cartOverlay, overlayDuration, {display: 'none', opacity: 0});
+				
 			}
 			
 		}
@@ -224,9 +251,9 @@
 			if (!TweenMax.isTweening($cart)) {
 				TweenMax.to($cart, cartDuration, {right: '-50px', ease: Back.easeOut.config(1.2)});
 				$cart.addClass('visible');
-				$overlay.addClass('cart-toggle');
+				$cartOverlay.addClass('cart-toggle');
 
-				TweenMax.to($overlay, overlayDuration, {display: 'block', opacity: .8, autoAlpha: 1});
+				TweenMax.to($cartOverlay, overlayDuration, {display: 'block', opacity: .8, autoAlpha: 1});
 				$('body').addClass('no-scroll');
 			}
 		}
