@@ -18,6 +18,7 @@
 
 	// ------- jQuery Elements ------- //
 
+	var $body = $('body');
 	var $totalPriceElem = $('#total-price');
 	var $shop = $('#shop');
 	var $shopList = $('#shop-list');
@@ -79,7 +80,7 @@
 		// ------- Event Handlers ------- //
 
 		// Open/Close Cart view.
-		$('body').on('click', '.cart-toggle', toggleCart);
+		$body.on('click', '.cart-toggle', toggleCart);
 
 		$shopList.on('click', '.shop-item__add-btn', function(e) {
 
@@ -121,123 +122,27 @@
 			localStorage.setItem('cartData', JSON.stringify(cartData));
 		});
 
-		$('body').on('click', '.details-toggle', function(e) {
+		$body.on('click', '.details-toggle', toggleDetails);
 
-			let detailsAnimation = new TimelineMax();
+		$cart.on('click', '.cart-item__less', decreaseQty);
 
-			if ($detailsModal.hasClass('visible')) {
-				$('body').removeClass('no-scroll');
-				$detailsOverlay.removeClass('details-toggle');
-				$detailsModal.removeClass('visible');
+		$cart.on('click', '.cart-item__plus', increaseQty);
 
-				detailsAnimation
-				.to($detailsModal, .3, {
-					display: 'none',
-					
-					autoAlpha: 0
-				})
-				.to($detailsModal, .1, {
-					y: '+=75px'
-				});
-
-				TweenMax.to($detailsOverlay, .3, { 
-					display: 'none',
-					autoAlpha: 0 
-				});
-			}
-			else {
-				$('body').addClass('no-scroll');
-				$detailsOverlay.addClass('details-toggle');
-				$detailsModal.addClass('visible');
-				
-
-				detailsAnimation
-				.to($detailsOverlay, .3, { 
-					display: 'block',
-					autoAlpha: .8 })
-				.to($detailsModal, .5, {
-					display: 'block',
-					y: '-=75px',
-					autoAlpha: 1
-				});
-			}
-			
-
-		});
-
-		$cart.on('click', '.cart-item__less', function(e) {	
-
-			var itemElm = $(e.target).closest('.cart-item');
-			var itemId = itemElm.attr('id');
-			var idNum = parseInt(itemId.replace(/[^0-9]/gi, ''));
-
-			for (let item of cartData.items) {
-				if (item.id == idNum) {
-					if (item.qty > 1) {
-						item.qty--;
-
-						updateCartList();
-
-						localStorage.setItem('cartData', JSON.stringify(cartData));
-					}
-					else if (confirm('Do you want to remove ' + item.title + ' from the cart?')) {
-						let index = cartData.items.indexOf(item);
-						cartData.items.splice(index, 1);
-
-						updateCartList();
-
-						localStorage.setItem('cartData', JSON.stringify(cartData));
-					}
-
-					break;
-				}
-			}
-		});
-
-		$cart.on('click', '.cart-item__plus', function(e) {
-			var idNum = getItemIdNum($(e.target).closest('.cart-item'));
-
-			for (let item of cartData.items) {
-				if (item.id == idNum) {
-					item.qty++;
-					updateCartList();
-					localStorage.setItem('cartData', JSON.stringify(cartData));
-					break;
-				}
-			}
-		});
-
-		$cart.on('click', '.cart-item__remove', function(e) {
-		
-			var idNum = getItemIdNum($(e.target).closest('.cart-item'));
-
-			for (let item of cartData.items) {
-				if (item.id == idNum) {
-					if (confirm('Do you want to remove ' + item.title + ' from the cart?')) {
-						let index = cartData.items.indexOf(item);
-						cartData.items.splice(index, 1);
-
-						updateCartList();
-						localStorage.setItem('cartData', JSON.stringify(cartData));
-					}
-					break;
-				}
-			}
-		});
+		$cart.on('click', '.cart-item__remove', removeItem);
 
 	});
 
 
 	// ---------  Functions --------- //
 
-	function toggleCart(e) {
+	function toggleCart() {
 
 		let cartDuration = .7;
 		let overlayDuration = .5;
 
 		if ($cart.hasClass('visible')) {
 			if (!TweenMax.isTweening($cart)) {
-				$('body').removeClass('no-scroll');
+				$body.removeClass('no-scroll');
 				$cart.removeClass('visible');
 				$cartOverlay.removeClass('cart-toggle');
 
@@ -254,7 +159,102 @@
 				$cartOverlay.addClass('cart-toggle');
 
 				TweenMax.to($cartOverlay, overlayDuration, {display: 'block', opacity: .8, autoAlpha: 1});
-				$('body').addClass('no-scroll');
+				$body.addClass('no-scroll');
+			}
+		}
+	}
+
+	function toggleDetails() {
+
+		let detailsAnimation = new TimelineMax();
+
+		if ($detailsModal.hasClass('visible')) {
+			if(!TweenMax.isTweening($detailsModal) && !TweenMax.isTweening($detailsOverlay)) {
+				$body.removeClass('no-scroll');
+				$detailsOverlay.removeClass('details-toggle');
+				$detailsModal.removeClass('visible');
+
+				detailsAnimation
+				.to($detailsModal, .3, {
+					display: 'none',			
+					autoAlpha: 0
+				})
+				.to($detailsModal, .1, {
+					y: '+=75px'
+				});
+
+				TweenMax.to($detailsOverlay, .3, { 
+					display: 'none',
+					autoAlpha: 0 
+				});
+			}
+		}
+		else {
+			if (!TweenMax.isTweening($detailsModal) && !TweenMax.isTweening($detailsOverlay)) {
+				$body.addClass('no-scroll');
+				$detailsOverlay.addClass('details-toggle');
+				$detailsModal.addClass('visible');
+					
+				detailsAnimation
+				.to($detailsOverlay, .3, { 
+					display: 'block',
+					autoAlpha: .8 })
+				.to($detailsModal, .5, {
+					display: 'block',
+					y: '-=75px',
+					autoAlpha: 1
+				});
+			}
+		}
+	}
+
+	function decreaseQty(e) {
+		var idNum = getItemIdNum($(e.target).closest('.cart-item'));
+
+		for (let item of cartData.items) {
+			if (item.id == idNum) {
+				if (item.qty > 1) {
+					item.qty--;
+					updateCartList();
+					localStorage.setItem('cartData', JSON.stringify(cartData));
+				}
+				else if (confirm('Do you want to remove ' + item.title + ' from the cart?')) {
+					let index = cartData.items.indexOf(item);
+					cartData.items.splice(index, 1);
+					updateCartList();
+					localStorage.setItem('cartData', JSON.stringify(cartData));
+				}
+
+				break;
+			}
+		}
+	}
+
+	function increaseQty(e) {
+		var idNum = getItemIdNum($(e.target).closest('.cart-item'));
+
+		for (let item of cartData.items) {
+			if (item.id == idNum) {
+				item.qty++;
+				updateCartList();
+				localStorage.setItem('cartData', JSON.stringify(cartData));
+				break;
+			}
+		}
+	}
+
+	function removeItem(e) {
+		var idNum = getItemIdNum($(e.target).closest('.cart-item'));
+
+		for (let item of cartData.items) {
+			if (item.id == idNum) {
+				if (confirm('Do you want to remove ' + item.title + ' from the cart?')) {
+					let index = cartData.items.indexOf(item);
+					cartData.items.splice(index, 1);
+					updateCartList();
+					localStorage.setItem('cartData', JSON.stringify(cartData));
+				}
+				break;
 			}
 		}
 	}
