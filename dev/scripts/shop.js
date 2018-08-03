@@ -4,6 +4,7 @@
 	var cartData = {};	// will contain the cart items' data.
 	var totalCartItems = 0;
 	var totalPriceNum = 0;
+
 	
 	// ------- Handlebars Templates & Helpers ------- //
 
@@ -15,6 +16,7 @@
 
 	var detailsTemplateHTML = $('#item-details-template').html();
 	var detailsTemplate = Handlebars.compile(detailsTemplateHTML);
+
 
 	// ------- jQuery Elements ------- //
 
@@ -32,7 +34,10 @@
 	var $detailsModal = $('#item-details-modal');
 	var $detailsOverlay = $('#details-overlay');
 
-	// Retrieve cart element's from local storage (if any) and update the cart listing.
+
+    /*
+	* Retrieve cart element's from local storage (if any) and update the cart listing.
+	*/
 	if (localStorage.getItem('cartData')) {
 
 		cartData = JSON.parse(localStorage.getItem('cartData'));
@@ -45,7 +50,9 @@
 		}
 	}
 
-	// Read the shop listing item's data and produce the HTML
+	/*
+	* Read the shop listing item's data and produce the HTML
+	*/
 	$.getJSON("shopdata.json", function(data) {
 
 		shopData = data;
@@ -56,14 +63,16 @@
 		setInterval(function() {
 			$loader.addClass('success');
 			$shop.removeClass('hidden');
+
 			let loaderAnimation = new TimelineMax();
+
 			loaderAnimation
-			.to($loader, .5, { 
+			.to($loader, .4, { 
 				border: '0px', 
 				backgroundColor: 'black', 
 				animation: 'none', 
 				rotate: 0})
-			.to($loader, .8, {
+			.to($loader, .7, {
 				height: '0px', 
 				width: '0px', 
 				display: 'none', 
@@ -75,7 +84,8 @@
 				display: 'none',
 			})
 			.to($shop, .3, {display: 'block', autoAlpha: 1});
-		}, 1000);
+		}, 800);
+
 		
 		// ------- Event Handlers ------- //
 
@@ -164,7 +174,20 @@
 		}
 	}
 
-	function toggleDetails() {
+	function toggleDetails(e) {
+		console.log(e.target);
+
+		if ($(e.target).hasClass('shop-item__details')) {
+			var idNum = getItemIdNum($(e.target).closest('.shop-item'));
+
+			for (let item of shopData.items) {
+				if (item.id == idNum) {
+					let itemDetailsHTML = detailsTemplate(item);
+					$detailsModal.html(itemDetailsHTML);
+					break;
+				}	
+			}
+		}
 
 		let detailsAnimation = new TimelineMax();
 
@@ -176,14 +199,11 @@
 
 				detailsAnimation
 				.to($detailsModal, .3, {
-					display: 'none',			
+					display: 'none',
+					y: '+=75px',
 					autoAlpha: 0
 				})
-				.to($detailsModal, .1, {
-					y: '+=75px'
-				});
-
-				TweenMax.to($detailsOverlay, .3, { 
+				.to($detailsOverlay, .3, { 
 					display: 'none',
 					autoAlpha: 0 
 				});
