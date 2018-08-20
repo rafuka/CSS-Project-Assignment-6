@@ -151,9 +151,9 @@ main {
     user-select: none;
     width: 50%; }
     .shop-item__details:hover, .shop-item__add-btn:hover {
-      background-color: #ec311b; }
+      background-color: #ce2b00; }
     .shop-item__details:active, .shop-item__add-btn:active {
-      background-color: #f27162; }
+      background-color: #ff4b1b; }
     .shop-item__details i.material-icons, .shop-item__add-btn i.material-icons {
       color: white;
       font-size: 1.5em;
@@ -169,7 +169,7 @@ main {
     font-weight: bold;
     width: 70%; }
   .shop-item__price {
-    color: #f27162;
+    color: #ff4b1b;
     text-align: center;
     width: 30%; }
   .shop-item__description {
@@ -218,12 +218,11 @@ main {
     display: flex;
     flex-wrap: wrap; }
   .cart-item__title {
-    font-weight: bold;
-    width: 70%; }
+    font-weight: bold; }
   .cart-item__price {
-    color: #f27162;
-    text-align: right;
-    width: 30%; }
+    color: #ff4b1b;
+    margin-left: 25px;
+    text-align: right; }
   .cart-item__descritpion {
     width: 55%; }
   .cart-item__options {
@@ -243,7 +242,7 @@ main {
     margin-bottom: 10px;
     text-align: center; }
   .cart-item__less, .cart-item__plus {
-    background-color: #f27162;
+    background-color: #ff4b1b;
     cursor: pointer;
     flex-grow: 1;
     height: 20px;
@@ -254,7 +253,7 @@ main {
       font-weight: bold;
       line-height: 20px; }
     .cart-item__less:active, .cart-item__plus:active {
-      background-color: #f69c91; }
+      background-color: #ff734e; }
   .cart-item__plus {
     margin-left: 5px; }
 
@@ -271,6 +270,10 @@ main {
   width: 100%; }
   .cart-footer__price {
     color: white; }
+    .cart-footer__price.with-coupon {
+      color: lightgreen; }
+      .cart-footer__price.with-coupon #total-price {
+        color: lightgreen; }
   .cart-footer__coupon {
     align-items: center;
     display: flex;
@@ -286,10 +289,12 @@ main {
       text-align: center;
       width: 100px; }
     .cart-footer__coupon-apply {
-      color: #f27162;
+      color: #ff4b1b;
       cursor: pointer; }
+      .cart-footer__coupon-apply:hover {
+        color: #ff8768; }
   .cart-footer__checkout {
-    background-color: #f27162;
+    background-color: #ff4b1b;
     border-radius: 5px;
     color: white;
     cursor: pointer;
@@ -339,11 +344,12 @@ main {
     position: relative;
     width: 100%; }
   #item-details-modal .carousel__image {
-    display: block;
+    display: none;
     margin: 0 auto;
     width: 100%;
     height: 100%;
-    object-fit: contain; }
+    object-fit: contain;
+    opacity: 0; }
   #item-details-modal .carousel__control-left, #item-details-modal .carousel__control-right {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;

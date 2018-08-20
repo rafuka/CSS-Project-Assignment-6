@@ -13,18 +13,18 @@ module.exports = function(grunt) {
       
       js: {
         files: 'dev/scripts/**/*.js',
-        tasks: ['concat', 'uglify'],
+        tasks: ['concat', 'babel', 'uglify'],
         options: {
           livereload: true,
         }
       },
+
       html: {
         files: 'index.html',
         options: {
           livereload: true,
         }
-      }
-      
+      }  
     },
 
     sass: {
@@ -48,26 +48,39 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['dev/scripts/*.js'],
-        dest: 'dist/scripts/built.js'
+        dest: 'dev/built/bundle.js'
+      }
+    },
+
+    babel : {
+      options: {
+        sourceMap: true,
+        presets: ['env']
+      },
+      dist: {
+        files: {
+          'dev/built/bundle-babel.js' : 'dev/built/bundle.js'
+        }
       }
     },
 
     uglify: {
       build: {
         files: {
-          'dist/scripts/built.min.js': ['dist/scripts/built.js']
+          'dist/scripts/built.min.js': ['dev/built/bundle-babel.js']
         }
       }
     }
   });
 
+  grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['sass', 'cssmin', 'concat', 'babel', 'uglify']);
 
 };
 

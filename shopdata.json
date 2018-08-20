@@ -5,7 +5,7 @@
 			"title": "Item 1",
 			"price": 9.99,
 			"descshort": "This is some short description about the item.",
-			"desclong": "This is a longer discription about the item. Lorem Ipsum blah blah Yadayada.",
+			"desclong": "This is a longer discription about the item. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 			"thumbnail": "dist/assets/placeholder.png",
 			"images": [
 				{
@@ -24,7 +24,7 @@
 			"title": "Item 2",
 			"price": 19.99,
 			"descshort": "This is some short description about the item.",
-			"desclong": "This is a longer discription about the item. Lorem Ipsum blah blah Yadayada.",
+			"desclong": "This is a longer discription about the item. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 			"thumbnail": "dist/assets/placeholder.png",
 			"images": [
 				{
@@ -43,7 +43,7 @@
 			"title": "Item 3",
 			"price": 7.99,
 			"descshort": "This is some short description about the item.",
-			"desclong": "This is a longer discription about the item. Lorem Ipsum blah blah Yadayada.",
+			"desclong": "This is a longer discription about the item. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 			"thumbnail": "dist/assets/placeholder.png",
 			"images": [
 				{
@@ -62,7 +62,7 @@
 			"title": "Item 4",
 			"price": 5.99,
 			"descshort": "This is some short description about the item.",
-			"desclong": "This is a longer discription about the item. Lorem Ipsum blah blah Yadayada.",
+			"desclong": "This is a longer discription about the item. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 			"thumbnail": "dist/assets/placeholder.png",
 			"images": [
 				{
@@ -81,7 +81,7 @@
 			"title": "Item 5",
 			"price": 8.99,
 			"descshort": "This is some short description about the item.",
-			"desclong": "This is a longer discription about the item. Lorem Ipsum blah blah Yadayada.",
+			"desclong": "This is a longer discription about the item. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 			"thumbnail": "dist/assets/placeholder.png",
 			"images": [
 				{
@@ -100,7 +100,7 @@
 			"title": "Item 6",
 			"price": 10.99,
 			"descshort": "This is some short description about the item.",
-			"desclong": "This is a longer discription about the item. Lorem Ipsum blah blah Yadayada.",
+			"desclong": "This is a longer discription about the item. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 			"thumbnail": "dist/assets/placeholder.png",
 			"images": [
 				{
@@ -119,7 +119,7 @@
 			"title": "Item 7",
 			"price": 12.99,
 			"descshort": "This is some short description about the item.",
-			"desclong": "This is a longer discription about the item. Lorem Ipsum blah blah Yadayada.",
+			"desclong": "This is a longer discription about the item. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 			"thumbnail": "dist/assets/placeholder.png",
 			"images": [
 				{

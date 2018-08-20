@@ -4,7 +4,23 @@
   "description": "A project built for under Bov Academy Front End Development career path.",
   "main": "index.html",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^8.1.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^7.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-csscomb": "^3.1.1",
+    "grunt-postcss": "^0.9.0",
+    "grunt-prettysass": "^0.2.3",
+    "grunt-scss-stylize": "^0.6.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,18 +38,5 @@
   "bugs": {
     "url": "https://github.com/rafuka/ShoppingCart/issues"
   },
-  "homepage": "https://github.com/rafuka/ShoppingCart#readme",
-  "devDependencies": {
-    "autoprefixer": "^8.1.0",
-    "grunt": "^1.0.1",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-cssmin": "^2.2.1",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^3.3.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-csscomb": "^3.1.1",
-    "grunt-postcss": "^0.9.0",
-    "grunt-prettysass": "^0.2.3",
-    "grunt-scss-stylize": "^0.6.0"
-  }
+  "homepage": "https://github.com/rafuka/ShoppingCart#readme"
 }

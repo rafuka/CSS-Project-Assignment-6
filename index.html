@@ -1,122 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Product Listing</title>	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="utf-8">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
-	<link rel="stylesheet" href="dist/css/main.min.css">
+  <title>Product Listing</title>  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+  <link rel="stylesheet" href="dist/css/main.min.css">
 </head>
 <body>
-	
-	<header>
-		<nav class="navbar">
-			<a href="#"><h1 class="navbar__logo">SHOP<br/>LOGO</h1></a>
-			<ul class="navbar__menu">
-				<li class="navbar__item">
-					<a href="#">Log In</a>
-				</li>
-				<li class="navbar__item">
-					<a class="cart-toggle" href="#"><i id="cart-icon" class="material-icons">shopping_cart</i><span id="cart-num">0</span></a>
-				</li>
-			</ul>
-		</nav>
-	</header>
+  
+  <header>
+    <nav class="navbar">
+      <a href="#"><h1 class="navbar__logo">SHOP<br/>LOGO</h1></a>
+      <ul class="navbar__menu">
+        <li class="navbar__item">
+          <a class="cart-toggle" href="#"><i id="cart-icon" class="material-icons">shopping_cart</i><span id="cart-num">0</span></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-	<div id="loading-modal">
-		<div id="loader"></div>
-	</div>
+  <div id="loading-modal">
+    <div id="loader"></div>
+  </div>
 
-	<main id="shop">
-		<ul id="shop-list"></ul>
-	</main>
+  <main id="shop">
+    <ul id="shop-list"></ul>
+  </main>
 
-	<div id="item-details-modal" class="item-details"></div>
+  <div id="item-details-modal" class="item-details"></div>
 
-	<section id="cart">
-		<ul id="cart-list"></ul>
-		<footer class="cart-footer">
-			<div class="cart-footer__coupon">
-				<label class="cart-footer__coupon-label" for="coupon">Coupon:</label>
-				<input class="cart-footer__coupon-input" id="coupon" type="text" maxlength="8" name="coupon">
-				<button class="cart-footer__coupon-apply">Apply</button>
-			</div>
-			<div class="cart-footer__price">Total: <span id="total-price">0.00</span> $</div>
-			<button class="cart-footer__checkout">Check Out</button>
-		</footer>
-	</section>
+  <section id="cart">
+    <ul id="cart-list"></ul>
+    <footer class="cart-footer">
+      <div class="cart-footer__coupon">
+        <label class="cart-footer__coupon-label" for="coupon">Coupon:</label>
+        <input class="cart-footer__coupon-input" id="coupon" type="text" maxlength="8" name="coupon">
+        <button class="cart-footer__coupon-apply">Apply</button>
+      </div>
+      <div class="cart-footer__price">Total: <span id="total-price">0.00</span> $</div>
+      <button class="cart-footer__checkout">Check Out</button>
+    </footer>
+  </section>
 
-	<footer class="main-footer">
-		
-	</footer>
+  <footer class="main-footer">
+    
+  </footer>
 
-	<div id="cart-overlay"></div>
-	<div id="details-overlay"></div>
-	
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-	<script
-			  src="https://code.jquery.com/jquery-3.3.1.min.js"
-			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			  crossorigin="anonymous"></script>
+  <div id="cart-overlay"></div>
+  <div id="details-overlay"></div>
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 
-	<!-- Handlebars Templates -->
-	<script id="shop-template" type="text/x-handlebars-template">
-		{{#each items}}
-			<li id="item-{{ id }}" class="shop-item">
-				<header class="shop-item__header">
-					<img class="shop-item__image" src="{{ thumbnail }}">
-					<div class="shop-item__options">
-						<a class="shop-item__details details-toggle" href="#">View details <i class="material-icons">view_carousel</i></a>
-						<a class="shop-item__add-btn">Add to Cart <i class="cart-plus material-icons">add_shopping_cart</i></a>
-					</div>	
-				</header>
-				<div class="shop-item__info">
-					<h2 class="shop-item__title">{{ title }}</h2>
-					<div class="shop-item__price">{{ price }} $</div>
-					<p class="shop-item__description">{{ descshort }}</p>
-				</div>
-			</li>
-		{{/each}}
-	</script>
+  <!-- Handlebars Templates -->
+  <script id="shop-template" type="text/x-handlebars-template">
+    {{#each items}}
+      <li id="item-{{ id }}" class="shop-item">
+        <header class="shop-item__header">
+          <img class="shop-item__image" src="{{ thumbnail }}">
+          <div class="shop-item__options">
+            <a class="shop-item__details details-toggle" href="#">View details <i class="material-icons">view_carousel</i></a>
+            <a class="shop-item__add-btn">Add to Cart <i class="cart-plus material-icons">add_shopping_cart</i></a>
+          </div>  
+        </header>
+        <div class="shop-item__info">
+          <h2 class="shop-item__title">{{ title }}</h2>
+          <div class="shop-item__price">{{ price }} $</div>
+          <p class="shop-item__description">{{ descshort }}</p>
+        </div>
+      </li>
+    {{/each}}
+  </script>
 
-	<script id="item-details-template" type="text/x-handlebars-template">
-		<div class="carousel">
-			<div class="carousel__images-container">
-				{{#each images}}
-				<img class="carousel__image" src="{{ imgurl }}">
-				{{/each}}
-			</div>
-			<div class="carousel__control-left material-icons">keyboard_arrow_left</div>
-			<div class="carousel__control-right material-icons">keyboard_arrow_right</div>
-		</div>
-		<h2 class="item-details__title">{{ title }}</h2>
-		<p class="item-details__description">{{ desclong }}</p>
-	</script>
+  <script id="item-details-template" type="text/x-handlebars-template">
+    <div class="carousel">
+      <div class="carousel__images-container">
+        {{#each images}}
+        <img class="carousel__image" src="{{ imgurl }}">
+        {{/each}}
+      </div>
+      <div class="carousel__control-left material-icons">keyboard_arrow_left</div>
+      <div class="carousel__control-right material-icons">keyboard_arrow_right</div>
+    </div>
+    <h2 class="item-details__title">{{ title }}</h2>
+    <p class="item-details__description">{{ desclong }}</p>
+  </script>
 
-	<script id="cart-template" type="text/x-handlebars-template">
-		{{#each items}}
-			<li id="cart-item-{{ id }}" class="cart-item">
-				<img class="cart-item__image" src="{{ thumbnail }}">
-				<div class="cart-item__info">
-					<h3 class="cart-item__title">{{ title }}</h3>
-					<div class="cart-item__price">{{ price }} $</div>
-					<p class="cart-item__description">{{ descshort }}</p>
-				</div>
-				<div class="cart-item__options">
-					<button class="cart-item__remove"><i class="material-icons">clear</i></button>
-					<input class="cart-item__qty" type="text" name="cart-item-qty" disabled value="{{ qty }}">
-					<button class="cart-item__less"><i class="material-icons">remove</i></button>
-					<button class="cart-item__plus"><i class="material-icons">add</i></button>
-				</div>
-			</li>
-		{{/each}}
-	</script>
-	<!-- /Handlebars Templates -->
+  <script id="cart-template" type="text/x-handlebars-template">
+    {{#each items}}
+      <li id="cart-item-{{ id }}" class="cart-item">
+        <img class="cart-item__image" src="{{ thumbnail }}">
+        <div class="cart-item__info">
+          <h3 class="cart-item__title">{{ title }}</h3>
+          <div class="cart-item__price">{{ price }} $</div>
+          <p class="cart-item__description">{{ descshort }}</p>
+        </div>
+        <div class="cart-item__options">
+          <button class="cart-item__remove"><i class="material-icons">clear</i></button>
+          <input class="cart-item__qty" type="text" name="cart-item-qty" disabled value="{{ qty }}">
+          <button class="cart-item__less"><i class="material-icons">remove</i></button>
+          <button class="cart-item__plus"><i class="material-icons">add</i></button>
+        </div>
+      </li>
+    {{/each}}
+  </script>
+  <!-- /Handlebars Templates -->
 
-	<!--PRODUCTION <script type="text/javascript" src="dist/scripts/built.min.js"></script>-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
-	<script type="text/javascript" src="dist/scripts/built.js"></script>
-<script src="//localhost:35729/livereload.js"></script>
+  <!--PRODUCTION <script type="text/javascript" src="dist/scripts/built.min.js"></script>-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+  <script type="text/javascript" src="dist/scripts/built.min.js"></script>
+  <script src="//localhost:35729/livereload.js"></script>
 </body>
 </html>
