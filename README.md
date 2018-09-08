@@ -3,3 +3,5 @@
 ## Testing
 
 Coupons: `DEADBEEF` and `BLAHBLAH`
+
+## [view live demo](https://rafuka.github.io/ShoppingCart/)
